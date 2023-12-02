@@ -4,7 +4,8 @@
   "description": "Auction application, semester project 2",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css & live-server"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,12 @@
   "bugs": {
     "url": "https://github.com/ellie489/Semester-project-2/issues"
   },
-  "homepage": "https://github.com/ellie489/Semester-project-2#readme"
+  "homepage": "https://github.com/ellie489/Semester-project-2#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.69.5"
+  }
 }
