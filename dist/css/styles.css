@@ -23803,7 +23803,6 @@ textarea.form-control-lg {
   background-position: center center;
   background-repeat: no-repeat;
   min-height: 200px;
-  color: #fff;
 }
 
 .bidder {
@@ -23812,7 +23811,59 @@ textarea.form-control-lg {
   background-position: center center;
   background-repeat: no-repeat;
   min-height: 300px;
-  color: #fff;
+}
+
+.btn.category {
+  border-radius: 1.2rem;
+  font-size: 1rem;
+}
+
+.btn.register:hover {
+  background-color: white;
+  color: black;
+}
+
+.main.container {
+  max-width: 1100px;
+}
+
+@media (max-width: 768px) {
+  .categories-desktop {
+    display: none;
+  }
+  .btn.category {
+    height: 100px;
+    width: 100px;
+  }
+  .register-desktop {
+    display: none;
+  }
+  h1, .h1 {
+    font-size: 2rem;
+  }
+  h2, .h2 {
+    font-size: 1.6rem;
+  }
+  .register-mobile {
+    border-radius: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .categories-mobile {
+    display: none;
+  }
+  .register-mobile {
+    display: none;
+  }
+  .btn.register-desktop {
+    height: 4rem;
+    margin-top: 4rem;
+    margin-left: 2rem;
+    margin-right: 1rem;
+    border-radius: 20rem;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
