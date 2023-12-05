@@ -23813,6 +23813,12 @@ textarea.form-control-lg {
   min-height: 300px;
 }
 
+.homepage {
+  background-image: url(/images/Background\ 2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .btn.category {
   border-radius: 1.2rem;
   font-size: 1rem;
@@ -23825,6 +23831,12 @@ textarea.form-control-lg {
 
 .main.container {
   max-width: 1100px;
+}
+
+.header {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 8rem;
 }
 
 @media (min-width: 1024px) {
