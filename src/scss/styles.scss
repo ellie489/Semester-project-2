@@ -1,2 +1,18 @@
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
+.gavel {
+    background-image: url('/icons/gavel.svg');
+    background-size: contain; // or 'contain' based on your preference
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 200px;
+    color: #fff; // Set text color for better visibility
+}
+.bidder {
+    background-image: url('/icons/bidders.svg');
+    background-size: contain; // or 'contain' based on your preference
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 300px;
+    color: #fff; // Set text color for better visibility
+}
