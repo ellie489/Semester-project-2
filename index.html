@@ -37,18 +37,11 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <form class="d-flex m-auto" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-secondary" type="submit">
-              Search
-            </button>
-          </form>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
           <ul class="navbar-nav justify-content-center">
             <li class="nav-item dropdown px-5">
               <a
@@ -83,28 +76,48 @@
               </ul>
             </li>
             <li class="nav-item px-3">
-              <button class="btn btn-secondary mx-3">Sign In</button>
+              <a
+                href="/login/"
+                class="btn btn-secondary mx-3 px-4"
+                role="button"
+                >Sign In</a
+              >
             </li>
           </ul>
         </div>
       </div>
     </nav>
     <main class="homepage">
-      <div class="main container">
+      <div class="main container d-flex flex-column justify-content-center">
+        <div class="input-group search-form mb-4">
+          <input
+            type="search"
+            class="form-control"
+            placeholder="Search for something"
+            aria-label="Search for something"
+            aria-describedby="search"
+          />
+          <span
+            class="input-group-text btn btn-secondary"
+            type="submit"
+            id="search"
+            >Search</span
+          >
+        </div>
         <div class="container header pt-5">
           <div class="container">
-            <div class="row d-flex justify-content-left">
+            <div class="row">
               <div class="col-12">
                 <h1>Welcome to Bidmate</h1>
               </div>
-              <div class="row d-flex justify-content-left">
+              <div class="row">
                 <div class="col-12 col-md-8 col-lg-8">
                   <h2>Auction Adventures Await: Bid Smart, Win Big!</h2>
-                  <div class="col-12 d-flex">
+                  <div class="col-12 d-flex justify-content-center">
                     <div class="col-5 col-md-6 col-lg-3 gavel"></div>
                     <div class="col-7 col-md-6 bidder-mobile"></div>
                     <button
-                      class="col-8 col-md-6 btn register-desktop btn-dark btn-lg"
+                      class="col-8 col-md-6 btn register-desktop btn-dark btn-lg shadow"
                     >
                       Sign up now
                     </button>
@@ -128,7 +141,7 @@
         <div class="container categories-desktop my-4">
           <div class="row g-2">
             <button
-              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2"
+              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
             >
               <img
                 src="/icons/clothes-white.svg"
@@ -137,7 +150,7 @@
               />Clothes
             </button>
             <button
-              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2"
+              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
             >
               <img
                 src="/icons/jewelry-white.svg"
@@ -146,7 +159,7 @@
               />Jewelry
             </button>
             <button
-              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2"
+              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
             >
               <img
                 src="/icons/art-white.svg"
@@ -155,7 +168,7 @@
               />Art
             </button>
             <button
-              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2"
+              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
             >
               <img
                 src="/icons/shoes-white.svg"
@@ -164,7 +177,7 @@
               />Shoes
             </button>
             <button
-              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2"
+              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
             >
               <img
                 src="/icons/watch-white.svg"
@@ -173,7 +186,7 @@
               />Watches
             </button>
             <button
-              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2"
+              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
             >
               <img
                 src="/icons/bikes-white.svg"
@@ -182,7 +195,7 @@
               />Bikes
             </button>
             <button
-              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2"
+              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
             >
               <img
                 src="/icons/electronics-white.svg"
@@ -191,7 +204,7 @@
               />Electronics
             </button>
             <button
-              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2"
+              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
             >
               <img
                 src="/icons/books-white.svg"
@@ -200,7 +213,7 @@
               />Books
             </button>
             <button
-              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2"
+              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
             >
               <img
                 src="/icons/furniture-white.svg"
@@ -209,7 +222,7 @@
               />Furniture
             </button>
             <button
-              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2"
+              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
             >
               <img
                 src="/icons/instruments-white.svg"
@@ -220,39 +233,41 @@
           </div>
         </div>
         <div class="container categories-mobile my-4">
-          <div class="row gap-2">
+          <div class="row gap-4">
             <div class="col-3">
-              <button class="btn category btn-light mx-2 d-flex flex-column">
+              <button class="btn category btn-light shadow-lg">
                 <img src="/icons/clothes.svg" alt="T shirt icon" /> Clothes
               </button>
             </div>
             <div class="col-3">
-              <button class="btn category btn-light mx-2 d-flex flex-column">
+              <button class="btn category btn-light shadow-lg">
                 <img src="/icons/jewelry.svg" alt="T shirt icon" />Jewelry
               </button>
             </div>
             <div class="col-3">
-              <button class="btn category btn-light mx-2 d-flex flex-column">
+              <button
+                class="btn category btn-light d-flex flex-column shadow-lg"
+              >
                 <img src="/icons/art.svg" alt="T shirt icon" />Art
               </button>
             </div>
             <div class="col-3">
-              <button class="btn category btn-light mx-2 d-flex flex-column">
+              <button class="btn category btn-light shadow-lg">
                 <img src="/icons/shoes.svg" alt="T shirt icon" />Shoes
               </button>
             </div>
             <div class="col-3">
-              <button class="btn category btn-light mx-2 d-flex flex-column">
+              <button class="btn category btn-light shadow-lg">
                 <img src="/icons/watch.svg" alt="T shirt icon" />Watches
               </button>
             </div>
             <div class="col-3">
-              <button class="btn category btn-light mx-2 d-flex flex-column">
+              <button class="btn category btn-light shadow-lg">
                 <img src="/icons/bikes.svg" alt="T shirt icon" />Bikes
               </button>
             </div>
             <div class="col-3">
-              <button class="btn category btn-light mx-2 d-flex flex-column">
+              <button class="btn category btn-light shadow-lg">
                 <img
                   src="/icons/electronics.svg"
                   alt="T shirt icon"
@@ -260,17 +275,17 @@
               </button>
             </div>
             <div class="col-3">
-              <button class="btn category btn-light mx-2 d-flex flex-column">
+              <button class="btn category btn-light shadow-lg">
                 <img src="/icons/books.svg" alt="T shirt icon" />Books
               </button>
             </div>
             <div class="col-3">
-              <button class="btn category btn-light mx-2 d-flex flex-column">
+              <button class="btn category btn-light shadow-lg">
                 <img src="/icons/furniture.svg" alt="T shirt icon" />Furniture
               </button>
             </div>
             <div class="col-3">
-              <button class="btn category btn-light mx-2 d-flex flex-column">
+              <button class="btn category btn-light shadow-lg">
                 <img
                   src="/icons/instruments.svg"
                   alt="T shirt icon"
@@ -279,37 +294,35 @@
             </div>
           </div>
         </div>
+      
+      <div class="container my-4 d-flex justify-content-left">
+        <h4 class="h3 fw-bold">New Listings</h4>
       </div>
-      <h4 class="h3 fw-bold">New Listings</h4>
-      <div class="container d-flex align-items-center justify-content-center">
+
+      <div
+        class="container d-flex flex-column align-items-center justify-content-center"
+      >
         <div class="row g-4">
           <div class="col-6 col-lg-3">
             <div class="card">
-              <img src="/images/alan-scales-1_WMZARl81c-unsplash-min.jpg" class="card-img-top" alt="..." />
+              <img
+                src="/images/alan-scales-1_WMZARl81c-unsplash-min.jpg"
+                class="card-img-top"
+                alt="..."
+              />
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
               </div>
             </div>
-            <p class="card-text">
-              This item is for sale.
-              3m 44s left. 
-            </p>
+            <p class="card-text">This item is for sale. 3m 44s left.</p>
           </div>
           <div class="col-6 col-lg-3">
             <div class="card">
-              <img src="/images/alonso-talbert-s6DiDMLK0jk-unsplash-min.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="card">
-              <img src="/images/amir-hanna-sweUF7FcyP4-unsplash-min.jpg" class="card-img-top" alt="..." />
+              <img
+                src="/images/alonso-talbert-s6DiDMLK0jk-unsplash-min.jpg"
+                class="card-img-top"
+                alt="..."
+              />
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">
@@ -321,7 +334,27 @@
           </div>
           <div class="col-6 col-lg-3">
             <div class="card">
-              <img src="/images/benjamin-r-opJElA_rBNw-unsplash-min.jpg" class="card-img-top" alt="..." />
+              <img
+                src="/images/amir-hanna-sweUF7FcyP4-unsplash-min.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="card">
+              <img
+                src="/images/benjamin-r-opJElA_rBNw-unsplash-min.jpg"
+                class="card-img-top"
+                alt="..."
+              />
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">
@@ -333,7 +366,11 @@
           </div>
           <div class="col-12 col-lg-3">
             <div class="card">
-              <img src="/images/birmingham-museums-trust-NspHfyZnMBE-unsplash-min.jpg" class="card-img-top" alt="..." />
+              <img
+                src="/images/birmingham-museums-trust-NspHfyZnMBE-unsplash-min.jpg"
+                class="card-img-top"
+                alt="..."
+              />
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">
@@ -346,7 +383,11 @@
 
           <div class="col-6 col-lg-3">
             <div class="card">
-              <img src="/images/caio-coelho-QRN47la37gw-unsplash-min.jpg" class="card-img-top" alt="..." />
+              <img
+                src="/images/caio-coelho-QRN47la37gw-unsplash-min.jpg"
+                class="card-img-top"
+                alt="..."
+              />
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">
@@ -370,7 +411,11 @@
           </div>
           <div class="col-6">
             <div class="card">
-              <img src="/images/cornelia-ng-zZLhoEwGCeM-unsplash-min.jpg" class="card-img-top" alt="..." />
+              <img
+                src="/images/cornelia-ng-zZLhoEwGCeM-unsplash-min.jpg"
+                class="card-img-top"
+                alt="..."
+              />
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">
@@ -382,7 +427,11 @@
           </div>
           <div class="col-6 col-lg-3">
             <div class="card">
-              <img src="/images/dillon-shook-mY3_bvR74fI-unsplash-min.jpg" class="card-img-top" alt="..." />
+              <img
+                src="/images/dillon-shook-mY3_bvR74fI-unsplash-min.jpg"
+                class="card-img-top"
+                alt="..."
+              />
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">
@@ -394,7 +443,11 @@
           </div>
           <div class="col-6 col-lg-3">
             <div class="card">
-              <img src="/images/eberhard-grossgasteiger-8lDkmXnKo7s-unsplash-min.jpg" class="card-img-top" alt="..." />
+              <img
+                src="/images/eberhard-grossgasteiger-8lDkmXnKo7s-unsplash-min.jpg"
+                class="card-img-top"
+                alt="..."
+              />
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">
@@ -405,13 +458,7 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="d-grid gap-2 col-6 mx-auto">
-        <button class="btn btn-primary" type="button">
-          Button test for CTA
-        </button>
-        <button class="btn btn-primary" type="button">Button</button>
-      </div>
+      </div></div>
     </main>
   </body>
 </html>
