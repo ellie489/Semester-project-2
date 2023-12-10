@@ -1,24 +1,26 @@
-// Primary colors
-$primary:       $orange;
-$secondary:     $red;
-
-$red:     #ff5e53;
-$orange:  #faae69;
-
-//Border radius
-
-$border-radius:               .375rem !default;
-$border-radius-sm:            .25rem !default;
-$border-radius-lg:            .5rem !default;
-$border-radius-xl:            1rem !default;
-$border-radius-xxl:           2rem !default;
-$border-radius-pill:          50rem !default;
-
-// Heading font sizes
-
-$h1-font-size:                $font-size-base * 2.5 !default;
-$h2-font-size:                $font-size-base * 2 !default;
-$h3-font-size:                $font-size-base * 1.75 !default;
-$h4-font-size:                $font-size-base * 1.5 !default;
-$h5-font-size:                $font-size-base * 1.25 !default;
-$h6-font-size:                $font-size-base !default;
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&display=swap');
+$red:     #E71626;
+$orange:  #FA9B51;
+$primary: $orange;
+$secondary: $red;
+$font-size-base: 1rem;
+$font-size-sm: $font-size-base * .875;
+$font-size-lg: $font-size-base * 1.5;
+$h1-font-size: $font-size-base * 5;
+$h2-font-size: $font-size-base * 3.3;
+$h3-font-size: $font-size-base * 2.8;
+$h4-font-size: $font-size-base * 2;
+$h5-font-size: $font-size-base * 1.5;
+$h6-font-size: $font-size-base * 1.2;
+$border-radius:               2rem;
+$border-radius-sm:            .25rem;
+$border-radius-lg:            2.5rem;
+$border-radius-xl:            2.8rem;
+$border-radius-xxl:           3rem;
+$border-radius-pill:          50rem;
+$border-color:                $primary;
+$font-family:  "Open Sans", "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$headings-font-family: "Lato", "Helvetica Neue";
+$link-decoration: none;
+@import "../../node_modules/bootstrap/scss/bootstrap";

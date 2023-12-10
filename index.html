@@ -1,12 +1,464 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="dist/css/styles.css">
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta description="Bidmate auction homepage" />
+    <title>Bidmate | Home</title>
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <script
+      defer
+      src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    ></script>
+    <script
+      defer
+      src="https://kit.fontawesome.com/88b8d69470.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-primary d-flex">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+          ><img
+            src="/icons/bidmate-icon.svg"
+            alt="Bidmate icon"
+            class="mx-2"
+          />Bidmate</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav justify-content-center">
+            <li class="nav-item dropdown px-5">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Categories
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Clothes</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Jewelry</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Art</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Shoes</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Watches</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Bikes</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Electronics</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Books</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Furniture</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Instruments</a></li>
+              </ul>
+            </li>
+            <li class="nav-item px-3">
+              <a
+                href="/login/"
+                class="btn btn-secondary mx-3 px-4"
+                role="button"
+                >Sign In</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main class="homepage">
+      <div class="main container d-flex flex-column justify-content-center">
+        <div class="input-group search-form mb-4">
+          <input
+            type="search"
+            class="form-control"
+            placeholder="Search for something"
+            aria-label="Search for something"
+            aria-describedby="search"
+          />
+          <span
+            class="input-group-text btn btn-secondary"
+            type="submit"
+            id="search"
+            >Search</span
+          >
+        </div>
+        <div class="container header pt-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <h1>Welcome to Bidmate</h1>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-8 col-lg-8">
+                  <h2>Auction Adventures Await: Bid Smart, Win Big!</h2>
+                  <div class="col-12 d-flex justify-content-center">
+                    <div class="col-5 col-md-6 col-lg-3 gavel"></div>
+                    <div class="col-7 col-md-6 bidder-mobile"></div>
+                    <button
+                      class="col-8 col-md-6 btn register-desktop btn-dark btn-lg shadow"
+                    >
+                      Sign up now
+                    </button>
+                  </div>
+                </div>
+                <div class="col-7 col-md-4 col-lg-3 bidder-desktop"></div>
+                <div class="col-1"></div>
+                <div class="col-12 m-auto">
+                  <button
+                    class="col-12 col-md-6 btn register-mobile btn-dark btn-lg"
+                  >
+                    Sign up now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="fw-bold mt-5">Categories</h3>
+        <div class="container categories-desktop my-4">
+          <div class="row g-2">
+            <button
+              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
+            >
+              <img
+                src="/icons/clothes-white.svg"
+                alt="T shirt icon"
+                class="mx-2 img-fluid"
+              />Clothes
+            </button>
+            <button
+              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
+            >
+              <img
+                src="/icons/jewelry-white.svg"
+                alt="T shirt icon"
+                class="mx-2 img-fluid"
+              />Jewelry
+            </button>
+            <button
+              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
+            >
+              <img
+                src="/icons/art-white.svg"
+                alt="T shirt icon"
+                class="mx-2 img-fluid"
+              />Art
+            </button>
+            <button
+              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
+            >
+              <img
+                src="/icons/shoes-white.svg"
+                alt="T shirt icon"
+                class="mx-2 img-fluid"
+              />Shoes
+            </button>
+            <button
+              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
+            >
+              <img
+                src="/icons/watch-white.svg"
+                alt="T shirt icon"
+                class="mx-2 img-fluid"
+              />Watches
+            </button>
+            <button
+              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
+            >
+              <img
+                src="/icons/bikes-white.svg"
+                alt="T shirt icon"
+                class="mx-2 img-fluid"
+              />Bikes
+            </button>
+            <button
+              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
+            >
+              <img
+                src="/icons/electronics-white.svg"
+                alt="T shirt icon"
+                class="mx-2 img-fluid"
+              />Electronics
+            </button>
+            <button
+              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
+            >
+              <img
+                src="/icons/books-white.svg"
+                alt="T shirt icon"
+                class="mx-2 img-fluid"
+              />Books
+            </button>
+            <button
+              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
+            >
+              <img
+                src="/icons/furniture-white.svg"
+                alt="T shirt icon"
+                class="mx-2 img-fluid"
+              />Furniture
+            </button>
+            <button
+              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
+            >
+              <img
+                src="/icons/instruments-white.svg"
+                alt="T shirt icon"
+                class="mx-2 img-fluid"
+              />Instruments
+            </button>
+          </div>
+        </div>
+        <div class="container categories-mobile my-4">
+          <div class="row gap-4">
+            <div class="col-3">
+              <button class="btn category btn-light shadow-lg">
+                <img src="/icons/clothes.svg" alt="T shirt icon" /> Clothes
+              </button>
+            </div>
+            <div class="col-3">
+              <button class="btn category btn-light shadow-lg">
+                <img src="/icons/jewelry.svg" alt="T shirt icon" />Jewelry
+              </button>
+            </div>
+            <div class="col-3">
+              <button
+                class="btn category btn-light d-flex flex-column shadow-lg"
+              >
+                <img src="/icons/art.svg" alt="T shirt icon" />Art
+              </button>
+            </div>
+            <div class="col-3">
+              <button class="btn category btn-light shadow-lg">
+                <img src="/icons/shoes.svg" alt="T shirt icon" />Shoes
+              </button>
+            </div>
+            <div class="col-3">
+              <button class="btn category btn-light shadow-lg">
+                <img src="/icons/watch.svg" alt="T shirt icon" />Watches
+              </button>
+            </div>
+            <div class="col-3">
+              <button class="btn category btn-light shadow-lg">
+                <img src="/icons/bikes.svg" alt="T shirt icon" />Bikes
+              </button>
+            </div>
+            <div class="col-3">
+              <button class="btn category btn-light shadow-lg">
+                <img
+                  src="/icons/electronics.svg"
+                  alt="T shirt icon"
+                />Electronics
+              </button>
+            </div>
+            <div class="col-3">
+              <button class="btn category btn-light shadow-lg">
+                <img src="/icons/books.svg" alt="T shirt icon" />Books
+              </button>
+            </div>
+            <div class="col-3">
+              <button class="btn category btn-light shadow-lg">
+                <img src="/icons/furniture.svg" alt="T shirt icon" />Furniture
+              </button>
+            </div>
+            <div class="col-3">
+              <button class="btn category btn-light shadow-lg">
+                <img
+                  src="/icons/instruments.svg"
+                  alt="T shirt icon"
+                />Instruments
+              </button>
+            </div>
+          </div>
+        </div>
+      
+      <div class="container my-4 d-flex justify-content-left">
+        <h4 class="h3 fw-bold">New Listings</h4>
+      </div>
+
+      <div
+        class="container d-flex flex-column align-items-center justify-content-center"
+      >
+        <div class="row g-4">
+          <div class="col-6 col-lg-3">
+            <div class="card">
+              <img
+                src="/images/alan-scales-1_WMZARl81c-unsplash-min.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+              </div>
+            </div>
+            <p class="card-text">This item is for sale. 3m 44s left.</p>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="card">
+              <img
+                src="/images/alonso-talbert-s6DiDMLK0jk-unsplash-min.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="card">
+              <img
+                src="/images/amir-hanna-sweUF7FcyP4-unsplash-min.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="card">
+              <img
+                src="/images/benjamin-r-opJElA_rBNw-unsplash-min.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-3">
+            <div class="card">
+              <img
+                src="/images/birmingham-museums-trust-NspHfyZnMBE-unsplash-min.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <div class="card">
+              <img
+                src="/images/caio-coelho-QRN47la37gw-unsplash-min.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card">
+              <img src="/images/shoes-1.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card">
+              <img
+                src="/images/cornelia-ng-zZLhoEwGCeM-unsplash-min.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="card">
+              <img
+                src="/images/dillon-shook-mY3_bvR74fI-unsplash-min.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="card">
+              <img
+                src="/images/eberhard-grossgasteiger-8lDkmXnKo7s-unsplash-min.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></div>
+    </main>
+  </body>
 </html>

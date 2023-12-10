@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta description="Bidmate auction homepage" />
+    <title>Bidmate | Add listing</title>
+    <link rel="stylesheet" href="../dist/css/styles.css" />
+    <script
+      defer
+      src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    ></script>
+    <script
+      defer
+      src="https://kit.fontawesome.com/88b8d69470.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-primary d-flex">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">
+          <img src="/icons/bidmate-icon.svg" alt="Bidmate icon" class="mx-2" />
+          Bidmate
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+      </div><ul class="navbar-nav justify-content-center align-items-center">
+        <li class="nav-item dropdown px-5">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Categories
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Clothes</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Jewelry</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Art</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Shoes</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Watches</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Bikes</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Electronics</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Books</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Furniture</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Instruments</a></li>
+          </ul>
+        </li>
+        <li class="nav-item px-3">
+          <a class="btn d-flex align-items-center"
+            href="/profile/"
+            >Profile <img src="../icons/Profile Icon.svg" alt="profile icon" class="mx-2"> </a
+          >
+        </li>
+      </ul>
+    </nav>
+    <div class="profile-container d-flex flex-column align-items-center">
+      <main>
+
+<div class="d-flex flex-column pt-4 justify-content-center align-items-center"><h1 class="fw-bold ">Create new listing
+              </h1>
+            </div>  
+        <section
+          class="new-listing d-flex justify-content-center align-items-center gap-4 my-4"
+        >
+          <div
+            class="container listing-container my-4 d-flex justify-content-center"
+          >
+            <div class="row">
+              <div
+                class="col-12 text-capitalize d-flex justify-content-center flex-column"
+              >
+            
+                <form>
+                  <div class="my-2 p-4 pb-0"><label for="title" class="mb-1 mx-1">Title</label>
+                  
+                          
+                          <input type="text" class="form-control" aria-label="Title" aria-describedby="title" id="title">
+            
+                          
+                  </div>
+                  <div class="my-2 p-4 pb-0"><label for="date" class="mb-1 mx-1">Deadline: </label>
+               
+                        
+                          <input type="datetime-local" class="form-control" placeholder="Deadline date" aria-label="deadline date" aria-describedby="deadline date" id="date">
+                      
+                          
+                  </div>
+                  
+                  <div class="mb-2 p-4 pb-0"><label for="listing-image" class="mb-1 mx-1">image URL</label>
+                    
+                        <div class="input-group"><input type="url" class="form-control" aria-label="listing image url" aria-describedby="image" id="listing-image">
+                        <button class="btn btn-primary">+</button></div>
+                          
+                          
+                  </div>
+          <div class="my-2 p-4"><label for="description" class="mb-1 mx-1">description</label>
+                
+                     
+                          <input type="textarea" class="form-control" aria-label="description of item" aria-describedby="description" id="description">
+                  
+                  </div>
+                  <div class="d-grid gap-2 col-10  mx-auto mb-5">
+                       <a href="../index.html" class="btn btn-secondary text-uppercase py-2">Publish</a>
+                    </div>
+                </form>
+              </div>
+          
+          </div>
+        </section>
+       
+      
+            
+       
+        <footer class="mt-4 pt-4">
+          <hr />
+          <p class="d-flex justify-content-center">Bidmate 2023</p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

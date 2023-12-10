@@ -1,2 +1,165 @@
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+.gavel {
+    background-image: url('/icons/gavel.svg');
+    background-size: contain; // or 'contain' based on your preference
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 200px;
+}
+.bidder-mobile, .bidder-desktop {
+    background-image: url('/icons/bidders.svg');
+    background-size: contain; // or 'contain' based on your preference
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 300px;
+}
+.homepage {
+  background-image: url(/images/Background\ 2.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.login-container, .register-container, .profile-container  {
+  background-image: url(/images/Background-login.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.search-form {
+  max-width: 1100px;
+  margin: auto;
+}
+.btn.category {
+    border-radius: 1.2rem;
+    font-size: 1rem;
+}
+
+.bid-container, .listing-container {
+  min-height: 50vh;
+  border-radius: 2.5rem;
+  width: 100%;
+  height: 100%;
+}
+.btn.register:hover {
+    background-color: white;
+    color: black;
+}
+.main.container {
+    max-width: 1100px;
+}
+
+main {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.login-form, .register-form, .bid-container, .listing-container {
+    background-color: rgb(255, 255, 255, 0.9);
+}
+
+.profile-avatar {
+  width: 168px;
+  height: 168px;
+  object-fit: cover;
+  filter: drop-shadow(0px 4px 8px #000);
+}
+
+.profile.container {
+  width: 90vw;
+  position: relative;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value for transparency */
+  z-index: 1000; /* Make sure it's above other content */
+}
+@media (min-width: 1024px) {
+  
+.header {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 6rem;
+  box-shadow: 0 .5rem 1rem rgba($black, .15);
+}
+.btn.register-desktop {
+    height: 4rem;
+    margin-top: 4rem;
+    margin-left: 2rem;
+    margin-right: 1rem;
+    border-radius: 20rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+  .register-mobile, .categories-mobile, .bidder-mobile {
+    display: none;
+}
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+.login-form, .register-form {
+  max-width: 400px;
+}
+
+}
+@media (max-width: 1024px) {
+    .categories-desktop, .register-desktop, .bidder-desktop, .nav-desktop  {
+    display: none;
+  }
+  .btn.category {
+    height: 6.5rem;
+    width: 6.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  .register-mobile {
+    border-radius: 2rem;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .container.profile {
+    flex-direction: column;
+  }
+}
+@media (max-width:  768px) {
+    .navbar {
+    position: fixed;
+    width: 100%;
+    top: auto;
+    bottom: 0;
+    z-index: 1000;
+  }
+  .login-form, .register-form {
+    max-width: 90vw;
+  }
+  
+  .login-container, .register-container {
+    background-image: url(/images/Background-login-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+  }
+ 
+  .header {
+    background: none;
+  }
+  .profile-avatar {
+    width: 120px;
+    height: 120px;
+  }
+}

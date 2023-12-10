@@ -1,12 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../dist/css/styles.css">
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta description="Bidmate auction homepage" />
+    <title>Bidmate | Profile</title>
+    <link rel="stylesheet" href="../dist/css/styles.css" />
+    <script
+      defer
+      src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    ></script>
+    <script
+      defer
+      src="https://kit.fontawesome.com/88b8d69470.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-primary d-flex">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">
+          <img src="/icons/bidmate-icon.svg" alt="Bidmate icon" class="mx-2" />
+          Bidmate
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+      </div>
+    </nav>
+    <div class="profile-container d-flex flex-column align-items-center">
+      <main>
+        <div id="modal-overlay" class="modal-overlay d-none"> <div
+          id="avatar-modal"
+          class="container d-flex flex-column justify-content-center align-items-center my-4 d-none"
+        >
+          <div
+            class="container listing-container bg-white shadow d-flex flex-column"
+          >
+            <div id="modal-head" class="modal-header">
+              <h1 class="h2 fw-bold m-auto py-4">Change avatar</h1>
+              <button
+                type="button"
+                class="btn-close btn-close-custom h5 px-4"
+                aria-label="Close"
+                id="close-modal-button"
+              ></button>
+            </div>
+            <div
+              class="d-flex flex-column justify-content-center align-items-center"
+            >
+              <img
+                src="../images/avatar.jpg"
+                alt="Your avatar"
+                class="profile-avatar rounded-circle img-fluid mx-4"
+              />
+
+              <a href="../index.html" class="btn btn-secondary my-4">Delete</a>
+
+              <form>
+                <div class="my-2 pt-3">
+                  <input
+                    type="text"
+                    placeholder="New Image URL"
+                    class="form-control mb-3"
+                    aria-label="New image url"
+                    aria-describedby="new image url"
+                    id="new-image"
+                  />
+                </div>
+                <div class="d-grid gap-2 col-12 mx-auto mb-5">
+                  <button id="hide-modal-button" class="btn btn-primary text-uppercase py-2 fw-bold">
+                    Save
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div></div>
+        <header class="container">
+          <div class="row">
+            <div
+              class="col-12 d-flex justify-content-center align-items-center"
+            >
+              <img
+                src="../images/avatar.jpg"
+                alt="Your avatar"
+                id="avatar-image"
+                class="profile-avatar rounded-circle img-fluid mx-4"
+              />
+              <div class="mx-4">
+                <h1 class="h4 fw-bold">Hi, username</h1>
+                <p class="h6 text-uppercase">Credits: 1000</p>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <section
+          class="container profile d-flex justify-content-center align-items-center gap-4 my-4"
+        >
+          <div
+            class="container listing-container bg-white my-4 d-flex justify-content-center"
+          >
+            <div class="row">
+              <div
+                class="col-12 text-capitalize d-flex justify-content-center flex-column"
+              >
+                <h2 class="h3">Your bids</h2>
+                <a
+                  href="../index.html"
+                  class="btn btn-lg btn-dark text-uppercase"
+                  >Browse</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="bid-container bg-white d-flex justify-content-center">
+            <div class="row">
+              <div
+                class="col-12 text-capitalize d-flex justify-content-center flex-column"
+              >
+                <h3>Your Listings</h3>
+                <a
+                  href="./new-listing.html"
+                  class="btn btn-lg btn-dark text-uppercase"
+                  >add listing</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="d-grid gap-2 col-8 col-md-4 col-lg-2 mx-auto mb-5">
+          <button class="btn btn-primary shadow py-2 fw-bold text-uppercase">
+            <a class="text-dark" href="../index.html">Sign out</a>
+          </button>
+        </div>
+
+        <footer class="mt-4 pt-4">
+          <hr />
+          <p class="d-flex justify-content-center">Bidmate 2023</p>
+        </footer>
+      </main>
+    </div>
+  </body>
 </html>
