@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../dist/css/styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta description="Bidmate auction homepage" />
+    <title>Bidmate | Sign In</title>
+    <link rel="stylesheet" href="../dist/css/styles.css" />
+    <script
+      defer
+      src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    ></script>
+    <script
+      defer
+      src="https://kit.fontawesome.com/88b8d69470.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-primary d-flex">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">
+          <img src="/icons/bidmate-icon.svg" alt="Bidmate icon" class="mx-2" />
+          Bidmate
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+      </div>
+    </nav>
+    <div class="login-container d-flex flex-column align-items-center"> <main>
+      <h1 class="fw-bold d-flex justify-content-center">Welcome back!</h1>
+      <p class="h6 d-flex justify-content-center">Please log in to your account</p>
+        <div class="container login-form shadow-lg rounded p-2 mt-4">
+          <form>
+            <div class="my-2 p-4 pb-0">
+                <div class="input-group">
+                    
+                    <input type="email" class="form-control" placeholder="Email" aria-label="emailHelp" aria-describedby="email" id="email">
+                  <span class="input-group-text">
+                        <i class="fa-solid fa-envelope" style="color: #E71626;"></i>
+                    </span></div>
+                    
+            </div>
+            <div class="mb-2 p-4">
+                <div class="input-group">
+               
+                    <input type="password" class="form-control" placeholder="Password" aria-label="passwordHelp" aria-describedby="password" id="password">
+                  <span class="input-group-text">
+                        <i class="fa-solid fa-lock" style="color: #E71626;"></i>
+                    </span></div>
+            </div>
     
-</body>
+            <div class="d-grid gap-2 col-10 mx-auto mb-5">
+                <button type="submit" class="btn btn-secondary shadow py-2 fw-bold text-uppercase"><a class="text-white" href="../profile/">Log in</a> 
+                </button>
+              </div>
+          </form>
+           <div class="container d-flex justify-content-center my-4"><p>Don't have an account? <a href="/register/" class="text-black fw-bold">Sign up here</a></p></div>
+        </div>
+       
+      </main>
+    </div>
+  </body>
 </html>
