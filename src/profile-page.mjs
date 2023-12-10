@@ -1,4 +1,4 @@
-import { showModal, hideModal } from './modal.mjs';
+import { showModal, hideModal } from './modules/modal.mjs';
 
 
 document.getElementById('avatar-image').addEventListener('click', function () {
