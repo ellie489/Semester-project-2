@@ -19,6 +19,8 @@ $border-radius-lg:            2.5rem;
 $border-radius-xl:            2.8rem;
 $border-radius-xxl:           3rem;
 $border-radius-pill:          50rem;
+$border-color:                $primary;
 $font-family:  "Open Sans", "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $headings-font-family: "Lato", "Helvetica Neue";
+$link-decoration: none;
 @import "../../node_modules/bootstrap/scss/bootstrap";
