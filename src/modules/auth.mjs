@@ -59,3 +59,29 @@ async function registerUser(name, email, password, avatar) {
   }
   
   export { registerUser };
+
+  async function getUserProfile(accessToken, userName) {
+    try {
+      const profile = `${API_URLS.PROFILE}/${userName}`;
+  
+      const options = {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${accessToken}`,
+        },
+      };
+  
+      const { success, data } = await fetchData(profile, options);
+  
+      if (!success) {
+        throw new Error('Failed to fetch user profile');
+      }
+  
+      return { success: true, userProfile: data };
+    } catch (error) {
+      console.error('User profile fetch error:', error);
+      return { success: false, error: 'An error occurred while fetching user profile' };
+    }
+  }
+  
+  export { getUserProfile };
