@@ -1,4 +1,4 @@
-import { loginUser } from "./auth.js";
+import { loginUser } from "./auth.mjs";
 
 document.getElementById('loginForm').addEventListener('submit', async function(event) {
   event.preventDefault();

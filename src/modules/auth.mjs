@@ -1,14 +1,14 @@
 import { API_URLS } from "./constants.mjs";
 import { fetchData } from "./api.mjs"; 
 
-async function loginUser(username, password) {
+async function loginUser(email, password) {
   try {
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ email, password }),
     };
 
     const { success, data } = await fetchData(API_URLS.LOGIN, options);
