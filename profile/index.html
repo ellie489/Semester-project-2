@@ -17,6 +17,8 @@
     ></script>
     <script defer type="module" src="../src/modules/modal.mjs"></script>
     <script defer type="module" src="../src/profile-page.mjs"></script>
+    <script defer type="module" src="../src/modules/auth.mjs"></script>
+    <script defer type="module" src="../src/views/profile.mjs"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-primary d-flex">
@@ -98,9 +100,10 @@
               class="d-flex flex-column justify-content-center align-items-center"
             >
               <img
-                src="../images/avatar.jpg"
+                src=""
                 alt="Your avatar"
-                class="profile-avatar rounded-circle img-fluid mx-4"
+                class="profile-avatar avatar-image rounded-circle img-fluid mx-4"
+                id="modal-avatar"
               />
 
               <a href="../index.html" class="btn btn-secondary my-4">Delete</a>
@@ -131,14 +134,14 @@
               class="col-12 d-flex justify-content-center align-items-center"
             >
               <img
-                src="../images/avatar.jpg"
+                src=""
                 alt="Your avatar"
-                id="avatar-image"
-                class="profile-avatar rounded-circle img-fluid mx-4"
+                id="profile-avatar"
+                class="profile-avatar avatar-image rounded-circle img-fluid mx-4"
               />
               <div class="mx-4">
-                <h1 class="h4 fw-bold">Hi, username</h1>
-                <p class="h6 text-uppercase">Credits: 1000</p>
+                <h1 class="h4 fw-bold" id="username"></h1>
+                <p class="h6 text-uppercase" id="credits"></p>
               </div>
             </div>
           </div>
