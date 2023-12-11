@@ -33,14 +33,14 @@ async function loginUser(username, password) {
 
 export { loginUser };
 
-async function registerUser(username, email, password, avatar) {
+async function registerUser(name, email, password, avatar) {
     try {
       const options = {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, email, password, avatar }),
+        body: JSON.stringify({ name, email, password, avatar }),
       };
   
       const { success, data } = await fetchData(API_URLS.REGISTER, options);
