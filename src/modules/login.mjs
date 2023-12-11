@@ -9,8 +9,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
   const loginResult = await loginUser(email, password);
 
   if (loginResult.success) {
-    console.log('Login successful');
-    console.log('User data:', loginResult.userData);
+    window.location.href = '../profile/index.html';
   } else {
     console.error('Login failed:', loginResult.error);
   }

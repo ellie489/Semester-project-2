@@ -3,7 +3,7 @@ const REGISTER = `${BASE_URL}/auth/register`;
 const LOGIN = `${BASE_URL}/auth/login`;
 const LISTINGS = `${BASE_URL}/listings`;
 const PROFILES = `${BASE_URL}/profiles`;
-const PROFILE = `${BASE_URL}/profiles/<name>`;
+const PROFILE = `${BASE_URL}/profiles`;
 const AVATAR = `${BASE_URL}/profiles/<name>/media`;
 // PUT Action for setting or changing avatar media
 const PROFILE_LISTINGS = `${BASE_URL}/profiles/<name>/listings`;
