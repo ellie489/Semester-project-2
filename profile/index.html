@@ -16,9 +16,10 @@
       crossorigin="anonymous"
     ></script>
     <script defer type="module" src="../src/modules/modal.mjs"></script>
-    <script defer type="module" src="../src/profile-page.mjs"></script>
     <script defer type="module" src="../src/modules/auth.mjs"></script>
     <script defer type="module" src="../src/views/profile.mjs"></script>
+    <script defer type="module" src="../src/modules/logout.mjs"></script>
+    <script defer type="module" src="../src/modules/credits.mjs"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-primary d-flex">
@@ -76,10 +77,11 @@
             />
           </a>
         </li>
-      </ul>
+      </ul><div id="banner" class= "bg-dark text-white"></div>
     </nav>
-    <div class="profile-container d-flex flex-column align-items-center">
-      <main>
+  
+    <div class="profile-container d-flex flex-column align-items-center"> 
+       <main>
         <div id="modal-overlay" class="modal-overlay d-none"> <div
           id="avatar-modal"
           class="container d-flex flex-column justify-content-center align-items-center my-4 d-none"
@@ -108,7 +110,7 @@
 
               <a href="../index.html" class="btn btn-secondary my-4">Delete</a>
 
-              <form>
+              <form id="avatarForm">
                 <div class="my-2 pt-3">
                   <input
                     type="text"
@@ -120,7 +122,7 @@
                   />
                 </div>
                 <div class="d-grid gap-2 col-12 mx-auto mb-5">
-                  <button id="hide-modal-button" class="btn btn-primary text-uppercase py-2 fw-bold">
+                  <button id="update-avatar-button" class="btn btn-primary text-uppercase py-2 fw-bold">
                     Save
                   </button>
                 </div>
@@ -182,7 +184,7 @@
           </div>
         </section>
         <div class="d-grid gap-2 col-8 col-md-4 col-lg-2 mx-auto mb-5">
-          <button class="btn btn-primary shadow py-2 fw-bold text-uppercase">
+          <button id="sign-out" class="btn btn-primary shadow py-2 fw-bold text-uppercase">
             <a class="text-dark" href="../index.html">Sign out</a>
           </button>
         </div>
