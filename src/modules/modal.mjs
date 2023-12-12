@@ -7,7 +7,7 @@ function showModal() {
     document.getElementById('modal-overlay').classList.add('d-none');
   }
    // Optionally, close modal when clicking on the overlay
-  document.getElementById('modal-overlay').addEventListener('click', function () {
-    hideModal();
-  });
+  // document.getElementById('modal-overlay').addEventListener('click', function () {
+  //   hideModal();
+  // });
    export { showModal, hideModal };
