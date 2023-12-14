@@ -150,10 +150,10 @@
         </header>
 
         <section
-          class="container profile d-flex justify-content-center align-items-center gap-4 my-4"
+          class="container profile d-flex justify-content-center align-items-start gap-4 my-4"
         >
           <div
-            class="container listing-container bg-white my-4 d-flex justify-content-center"
+            class="container bid-container bg-white my-4 d-flex justify-content-center"
           >
             <div class="row">
               <div
@@ -168,17 +168,18 @@
               </div>
             </div>
           </div>
-          <div class="bid-container bg-white d-flex justify-content-center">
+          <div class="listing-container bg-white my-4  d-flex justify-content-center">
             <div class="row">
               <div
                 class="col-12 text-capitalize d-flex justify-content-center flex-column"
               >
-                <h3>Your Listings</h3>
-                <a
+                <h3 class="m-auto my-3">Your Listings</h3>
+                <div id="listing-container" class="col-8 m-auto" ></div>
+                <div class="m-auto"><a
                   href="./new-listing.html"
-                  class="btn btn-lg btn-dark text-uppercase"
+                  class="btn  btn-dark text-capitalize mb-4"
                   >add listing</a
-                >
+                ></div>
               </div>
             </div>
           </div>
