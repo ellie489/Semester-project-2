@@ -16,6 +16,7 @@
       crossorigin="anonymous"
     ></script>
     <script defer type="module" src="./src/modules/credits.mjs"></script>
+    <script defer type="module" src="./src/modules/listings.mjs"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-primary d-flex">
@@ -85,10 +86,11 @@
               >
             </li>
           </ul>
-        </div><div id="banner" class= "bg-dark text-white"></div>
+        </div>
       </div>
     </nav>
     <main class="homepage">
+      <div id="banner" class="bg-dark text-white"></div>
       <div class="main container d-flex flex-column justify-content-center">
         <div class="input-group search-form mb-4">
           <input
@@ -124,6 +126,7 @@
                     </button>
                   </div>
                 </div>
+
                 <div class="col-7 col-md-4 col-lg-3 bidder-desktop"></div>
                 <div class="col-1"></div>
                 <div class="col-12 m-auto">
@@ -138,11 +141,11 @@
           </div>
         </div>
 
-        <h3 class="fw-bold mt-5">Categories</h3>
         <div class="container categories-desktop my-4">
+          <h3 class="fw-bold my-5">Categories</h3>
           <div class="row g-2">
             <button
-              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
+              class="col-2 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow px-2"
             >
               <img
                 src="/icons/clothes-white.svg"
@@ -151,7 +154,7 @@
               />Clothes
             </button>
             <button
-              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
+              class="col-2 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow px-2"
             >
               <img
                 src="/icons/jewelry-white.svg"
@@ -160,7 +163,7 @@
               />Jewelry
             </button>
             <button
-              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
+              class="col-2 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow px-2"
             >
               <img
                 src="/icons/art-white.svg"
@@ -169,7 +172,7 @@
               />Art
             </button>
             <button
-              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
+              class="col-2 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow px-2"
             >
               <img
                 src="/icons/shoes-white.svg"
@@ -178,7 +181,7 @@
               />Shoes
             </button>
             <button
-              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
+              class="col-2 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow px-2"
             >
               <img
                 src="/icons/watch-white.svg"
@@ -187,7 +190,7 @@
               />Watches
             </button>
             <button
-              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
+              class="col-2 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow px-2"
             >
               <img
                 src="/icons/bikes-white.svg"
@@ -196,7 +199,7 @@
               />Bikes
             </button>
             <button
-              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
+              class="col-2 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow px-2"
             >
               <img
                 src="/icons/electronics-white.svg"
@@ -205,7 +208,7 @@
               />Electronics
             </button>
             <button
-              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
+              class="col-2 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow px-2"
             >
               <img
                 src="/icons/books-white.svg"
@@ -214,16 +217,16 @@
               />Books
             </button>
             <button
-              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
+              class="col-2 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow px-2"
             >
               <img
                 src="/icons/furniture-white.svg"
                 alt="T shirt icon"
                 class="mx-2 img-fluid"
-              />Furniture
+              /> Furniture
             </button>
             <button
-              class="col-3 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow"
+              class="col-2 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow px-2"
             >
               <img
                 src="/icons/instruments-white.svg"
@@ -233,7 +236,9 @@
             </button>
           </div>
         </div>
+
         <div class="container categories-mobile my-4">
+          <h3 class="fw-bold my-5">Categories</h3>
           <div class="row gap-4">
             <div class="col-3">
               <button class="btn category btn-light shadow-lg">
@@ -295,11 +300,16 @@
             </div>
           </div>
         </div>
-      
-      <div class="container my-4 d-flex justify-content-left">
-        <h4 class="h3 fw-bold">New Listings</h4>
-      </div>
 
+        <div
+          id="listings-outer-container"
+          class="container d-flex justify-content-center flex-column gap-4"
+        >
+          <h4 class="h3 fw-bold mt-4">New Listings</h4>
+          <div class="row" id="listings-container"></div>
+        </div>
+      </div>
+      <!-- 
       <div
         class="container d-flex flex-column align-items-center justify-content-center"
       >
@@ -459,7 +469,7 @@
             </div>
           </div>
         </div>
-      </div></div>
+      </div></div> -->
     </main>
   </body>
 </html>
