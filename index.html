@@ -15,6 +15,7 @@
       src="https://kit.fontawesome.com/88b8d69470.js"
       crossorigin="anonymous"
     ></script>
+    <script defer type="module" src="./src/modules/utils.mjs"></script>
     <script defer type="module" src="./src/modules/credits.mjs"></script>
     <script defer type="module" src="./src/modules/listings.mjs"></script>
   </head>
@@ -77,14 +78,18 @@
                 <li><a class="dropdown-item" href="#">Instruments</a></li>
               </ul>
             </li>
-            <li class="nav-item px-3">
+            <li id="sign-in-nav-item" class="nav-item px-3">
               <a
                 href="/login/"
                 class="btn btn-secondary mx-3 px-4"
                 role="button"
                 >Sign In</a
-              >
-            </li>
+              >            
+            <img
+              src="../icons/Profile Icon.svg"
+              alt="profile icon"
+              class="mx-2"
+            /></li>
           </ul>
         </div>
       </div>
@@ -223,7 +228,8 @@
                 src="/icons/furniture-white.svg"
                 alt="T shirt icon"
                 class="mx-2 img-fluid"
-              /> Furniture
+              />
+              Furniture
             </button>
             <button
               class="col-2 col-xl-2 btn category btn-lg btn-secondary d-flex align-items-center mx-2 shadow px-2"
