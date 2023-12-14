@@ -97,8 +97,8 @@ document
     hideModal();
   });
 
-async function fetchProfileListings(name) {
-  const url = `${API_URLS.PROFILES}/${name}/listings?includeListings=true`;
+async function fetchProfileListings(userName) {
+  const url = `${API_URLS.PROFILES}/${userName}/listings?includeListings=true`;
 
   try {
     const accessToken = localStorage.getItem("accessToken");
@@ -120,8 +120,6 @@ async function fetchProfileListings(name) {
     data.forEach((listing) => {
       const listingCard = createListingCard(listing);
       listingsContainer.appendChild(listingCard);
-
-      return { success: true, data };
     });
   } catch (error) {
     console.error("Request error:", error);
@@ -158,6 +156,51 @@ function createListingCard(listing) {
   cardBody.appendChild(deadlineElement);
 
   cardDiv.appendChild(cardBody);
+  const deleteContainer = document.createElement("div");
+  const deleteButton = document.createElement("button");
+  deleteContainer.classList.add("d-flex","justify-content-center", "pb-3");
+  deleteButton.classList.add("btn", "btn-danger", "delete-button");
+  deleteButton.textContent = "Delete";
+
+  deleteButton.addEventListener("click", async function () {
+    const confirmation = confirm("Are you sure you want to delete this listing?");
+    if (confirmation) {
+      const success = await deleteListing(listing.id);
+      if (success) {
+        cardDiv.parentNode.removeChild(cardDiv);
+      } else {
+        alert("Failed to delete the listing. Please try again.");
+      }
+    }
+  });
+  deleteContainer.appendChild(deleteButton);
+  cardDiv.appendChild(deleteContainer);
 
   return cardDiv;
+}
+async function deleteListing(listingId) {
+  try {
+    const accessToken = localStorage.getItem("accessToken");
+    const url = `${API_URLS.LISTINGS}/${listingId}`;
+    const options = {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        "Content-Type": "application/json",
+      },
+    };
+
+    const response = await fetchData(url, options);
+
+    if (response.success) {
+      console.log("Listing deleted successfully");
+      return true;
+    } else {
+      console.error("Failed to delete listing:", response.error);
+      return false;
+    }
+  } catch (error) {
+    console.error("Error deleting listing:", error);
+    return false;
+  }
 }
