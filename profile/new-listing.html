@@ -15,6 +15,7 @@
       src="https://kit.fontawesome.com/88b8d69470.js"
       crossorigin="anonymous"
     ></script>
+    <script defer type="module" src="../src/views/new-listing.mjs"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-primary d-flex">
@@ -91,7 +92,7 @@
               <div
                 class="col-12 text-capitalize d-flex justify-content-center flex-column"
               >
-                <form>
+                <form id="new-listing-form">
                   <div class="my-2 p-4 pb-0">
                     <label for="title" class="mb-1 mx-1">Title</label>
 
@@ -132,24 +133,25 @@
                       <button class="btn btn-primary">+</button>
                     </div>
                   </div>
-                  <div class="my-2 p-4">
-                    <label for="description" class="mb-1 mx-1"
-                      >description</label
-                    >
+                  <div class="my-2 p-4 pb-0">
+                    <label for="tags" class="mb-1 mx-1">Tags (optional)</label>
 
                     <input
-                      type="textarea"
+                      type="text"
                       class="form-control"
-                      aria-label="description of item"
-                      aria-describedby="description"
-                      id="description"
+                      aria-label="Tags"
+                      aria-describedby="tags"
+                      id="tags"
                     />
                   </div>
+                  <div class="my-2 p-4 pb-2">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" id="description"></textarea>
+                  </div>
                   <div class="d-grid gap-2 col-10 mx-auto mb-5">
-                    <a
-                      href="../index.html"
+                    <button type="submit"
                       class="btn btn-secondary text-uppercase py-2"
-                      >Publish</a
+                      >Publish</button
                     >
                   </div>
                 </form>
