@@ -1,7 +1,7 @@
 import { getUserProfile } from "../modules/auth.mjs";
 import { API_URLS } from "../modules/constants.mjs";
 import { fetchData } from "../modules/api.mjs";
-import { showModal, hideModal } from '../modules/modal.mjs';
+import { showModal, hideModal } from "../modules/modal.mjs";
 
 document.addEventListener("DOMContentLoaded", async function () {
   const accessToken = localStorage.getItem("accessToken");
@@ -14,35 +14,37 @@ document.addEventListener("DOMContentLoaded", async function () {
       const userProfile = profileResult.userProfile;
 
       updateProfileInfo(userProfile);
+      fetchProfileListings(userName);
     } else {
       console.error("Failed to fetch user profile:", profileResult.error);
     }
   } else {
     console.error("Access token not available. User not logged in.");
   }
+
   const avatarForm = document.getElementById("avatarForm");
   if (avatarForm) {
     avatarForm.addEventListener("submit", function (event) {
-      event.preventDefault(); // Prevent the default form submission behavior
+      event.preventDefault();
 
       const newImageUrl = document.getElementById("new-image").value;
       if (newImageUrl) {
-        // Call a function to make the PUT request
         changeAvatar(newImageUrl);
       }
     });
   }
 });
+
 async function changeAvatar(newImageUrl) {
-  const accessToken = localStorage.getItem('accessToken');
-  const userName = localStorage.getItem('name');
+  const accessToken = localStorage.getItem("accessToken");
+  const userName = localStorage.getItem("name");
 
   if (accessToken) {
     const url = `${API_URLS.PROFILE}/${userName}/media`;
     const options = {
-      method: 'PUT',
+      method: "PUT",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
         Authorization: `Bearer ${accessToken}`,
       },
       body: JSON.stringify({ avatar: newImageUrl }),
@@ -51,15 +53,14 @@ async function changeAvatar(newImageUrl) {
     const response = await fetchData(url, options);
 
     if (response.success) {
-      console.log('Avatar changed successfully');
-      // You might want to update the displayed avatar immediately
+      console.log("Avatar changed successfully");
       updateProfileInfo(response.data);
-      document.getElementById('new-image').value = '';
+      document.getElementById("new-image").value = "";
     } else {
-      console.error('Failed to change avatar:', response.error);
+      console.error("Failed to change avatar:", response.error);
     }
   } else {
-    console.error('Access token not available. User not logged in.');
+    console.error("Access token not available. User not logged in.");
   }
 }
 function updateProfileInfo(userProfile) {
@@ -78,16 +79,85 @@ function updateProfileInfo(userProfile) {
   creditsElement.innerText = `Credits: ${userProfile.credits}`;
 }
 
+document
+  .getElementById("profile-avatar")
+  .addEventListener("click", function () {
+    showModal();
+  });
 
-document.getElementById('profile-avatar').addEventListener('click', function () {
- showModal();
-});
+document
+  .getElementById("update-avatar-button")
+  .addEventListener("click", function () {
+    hideModal();
+  });
 
+document
+  .getElementById("close-modal-button")
+  .addEventListener("click", function () {
+    hideModal();
+  });
 
-document.getElementById('update-avatar-button').addEventListener('click', function () {
- hideModal();
-});
+async function fetchProfileListings(name) {
+  const url = `${API_URLS.PROFILES}/${name}/listings?includeListings=true`;
 
-document.getElementById('close-modal-button').addEventListener('click', function () {
-  hideModal();
- });
+  try {
+    const accessToken = localStorage.getItem("accessToken");
+    const headers = {
+      Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "application/json",
+    };
+
+    const response = await fetch(url, { headers });
+
+    if (!response.ok) {
+      throw new Error("Request failed");
+    }
+
+    const data = await response.json();
+    console.log(data);
+    const listingsContainer = document.getElementById("listing-container");
+    listingsContainer.innerHTML = "";
+    data.forEach((listing) => {
+      const listingCard = createListingCard(listing);
+      listingsContainer.appendChild(listingCard);
+
+      return { success: true, data };
+    });
+  } catch (error) {
+    console.error("Request error:", error);
+    return { success: false, error: "An error occurred during the request" };
+  }
+}
+function createListingCard(listing) {
+  const cardDiv = document.createElement("div");
+  cardDiv.classList.add("card", "mb-3");
+
+  const imageElement = document.createElement("img");
+  imageElement.src = listing.media[0];
+  imageElement.alt = "Listing Image";
+  imageElement.classList.add("card-img-top");
+  cardDiv.appendChild(imageElement);
+
+  const cardBody = document.createElement("div");
+  cardBody.classList.add("card-body");
+
+  const titleElement = document.createElement("h5");
+  titleElement.classList.add("card-title");
+  titleElement.textContent = listing.title;
+  cardBody.appendChild(titleElement);
+
+  const descriptionElement = document.createElement("p");
+  descriptionElement.classList.add("card-text");
+  descriptionElement.textContent = listing.description;
+  cardBody.appendChild(descriptionElement);
+
+  const deadlineElement = document.createElement("p");
+  deadlineElement.classList.add("card-text");
+  const deadlineDate = new Date(listing.endsAt).toLocaleString();
+  deadlineElement.textContent = `Deadline: ${deadlineDate}`;
+  cardBody.appendChild(deadlineElement);
+
+  cardDiv.appendChild(cardBody);
+
+  return cardDiv;
+}
