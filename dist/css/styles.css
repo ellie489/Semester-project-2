@@ -23807,7 +23807,7 @@ textarea.form-control-lg {
   background-size: contain;
 }
 
-.login-container, .register-container, .profile-container {
+.login-container, .register-container, .profile-container, .details-container {
   background-image: url(/images/Background-login.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -23874,22 +23874,69 @@ main {
 
 #banner {
   position: fixed;
-  top: 68px; /* Adjust the height of your navbar */
-  width: 100%;
+  top: 60px; /* Adjust the height of your navbar */
+  width: 100vw;
   height: 2.5rem;
   font-weight: bold;
   text-align: center;
+  z-index: 1000;
 }
 
 #banner p {
   margin-top: 0.5rem;
 }
 
+.card img {
+  height: 300px;
+  object-fit: cover;
+}
+
+.large img {
+  height: 500px;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+#listings-outer-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.card-invisible {
+  border: none;
+  background-color: transparent;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  border-radius: 1rem;
+}
+
+.carousel-inner {
+  max-height: 80vh;
+}
+
+#listing-details-container {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+#listingTitle {
+  overflow-wrap: break-word;
+}
+
+.card-body, .card-img {
+  cursor: pointer;
+}
+
 @media (min-width: 1024px) {
   .header {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgb(255, 255, 255);
     padding: 2rem;
-    border-radius: 6rem;
+    border-radius: 3rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   }
   .btn.register-desktop {
@@ -23904,12 +23951,6 @@ main {
   .register-mobile, .categories-mobile, .bidder-mobile {
     display: none;
   }
-  .navbar {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-  }
   .login-form, .register-form {
     max-width: 400px;
   }
@@ -23917,6 +23958,9 @@ main {
 @media (max-width: 1024px) {
   .categories-desktop, .register-desktop, .bidder-desktop, .nav-desktop {
     display: none;
+  }
+  .search-form {
+    max-width: 90vw;
   }
   .btn.category {
     height: 6.5rem;
@@ -23939,6 +23983,9 @@ main {
   .container.profile {
     flex-direction: column;
   }
+  .homepage {
+    background-size: contain;
+  }
 }
 @media (max-width: 768px) {
   .navbar {
@@ -23951,7 +23998,7 @@ main {
   .login-form, .register-form {
     max-width: 90vw;
   }
-  .login-container, .register-container {
+  .login-container, .register-container, .details-container {
     background-image: url(/images/Background-login-mobile.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -23973,6 +24020,13 @@ main {
   }
   #banner p {
     margin-top: 0;
+  }
+  .card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  .large img {
+    height: 300px;
   }
 }
 
