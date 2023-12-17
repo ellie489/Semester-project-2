@@ -11,13 +11,19 @@ async function loginUser(email, password) {
       body: JSON.stringify({ email, password }),
     };
 
-    const { success, data } = await fetchData(API_URLS.LOGIN, options);
+    const result = await fetch(API_URLS.LOGIN, options);
 
-    if (!success) {
+    if (!result.ok) {
+      if (result.status === 400 || result.status === 401) {
+        const responseData = await result.json();
+        console.error('Login error:', responseData.errors[0]);
+        return { success: false, error: responseData.errors[0].message };
+      }
+
       throw new Error('Login failed');
     }
 
-    const { name, credits, avatar, accessToken } = data;
+    const { name, credits, avatar, accessToken } = await result.json();
 
     localStorage.setItem('name', name);
     localStorage.setItem('credits', credits);
@@ -34,30 +40,32 @@ async function loginUser(email, password) {
 export { loginUser };
 
 async function registerUser(name, email, password, avatar) {
-    try {
-      const options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, email, password, avatar }),
-      };
-  
-      const { success, data } = await fetchData(API_URLS.REGISTER, options);
-  
-      if (!success) {
-        throw new Error('Registration failed');
+  try {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, email, password, avatar }),
+    };
+
+    const result = await fetch(API_URLS.REGISTER, options);
+
+    if (!result.ok) {
+      if (result.status === 400) {
+        const responseData = await result.json();
+        return { success: false, error: responseData.errors[0].message };
       }
-  
-      window.location.href = 'login.html';
-  
-      return { success: true };
-    } catch (error) {
-      console.error('Registration error:', error);
-      return { success: false, error: 'An error occurred during registration' };
+
+      throw new Error('Registration failed');
     }
+
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: 'An error occurred during registration' };
   }
-  
+}
+
   export { registerUser };
 
   async function getUserProfile(accessToken, userName) {
