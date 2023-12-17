@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       console.error("Failed to fetch user profile:", profileResult.error);
     }
   } else {
-    console.error("Access token not available. User not logged in.");
+    window.alert("Access token not available. Please log in again.");
+    window.location.href = '/login/'; 
   }
 
   const avatarForm = document.getElementById("avatarForm");
@@ -69,10 +70,10 @@ function updateProfileInfo(userProfile) {
   const userNameElement = document.getElementById("username");
   const creditsElement = document.getElementById("credits");
 
-  profileAvatar.src = userProfile.avatar;
+  profileAvatar.src = userProfile.avatar || "https://cdn.pixabay.com/photo/2018/11/13/21/43/avatar-3814049_1280.png";
 
   if (modalAvatar) {
-    modalAvatar.src = userProfile.avatar;
+    modalAvatar.src = userProfile.avatar || "https://cdn.pixabay.com/photo/2018/11/13/21/43/avatar-3814049_1280.png";
   }
 
   userNameElement.innerText = `Hi, ${userProfile.name}`;
@@ -156,51 +157,12 @@ function createListingCard(listing) {
   cardBody.appendChild(deadlineElement);
 
   cardDiv.appendChild(cardBody);
-  const deleteContainer = document.createElement("div");
-  const deleteButton = document.createElement("button");
-  deleteContainer.classList.add("d-flex","justify-content-center", "pb-3");
-  deleteButton.classList.add("btn", "btn-danger", "delete-button");
-  deleteButton.textContent = "Delete";
 
-  deleteButton.addEventListener("click", async function () {
-    const confirmation = confirm("Are you sure you want to delete this listing?");
-    if (confirmation) {
-      const success = await deleteListing(listing.id);
-      if (success) {
-        cardDiv.parentNode.removeChild(cardDiv);
-      } else {
-        alert("Failed to delete the listing. Please try again.");
-      }
-    }
+  cardDiv.addEventListener("click", function () {
+    openDetailsPage(listing.id);
   });
-  deleteContainer.appendChild(deleteButton);
-  cardDiv.appendChild(deleteContainer);
-
   return cardDiv;
 }
-async function deleteListing(listingId) {
-  try {
-    const accessToken = localStorage.getItem("accessToken");
-    const url = `${API_URLS.LISTINGS}/${listingId}`;
-    const options = {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-        "Content-Type": "application/json",
-      },
-    };
-
-    const response = await fetchData(url, options);
-
-    if (response.success) {
-      console.log("Listing deleted successfully");
-      return true;
-    } else {
-      console.error("Failed to delete listing:", response.error);
-      return false;
-    }
-  } catch (error) {
-    console.error("Error deleting listing:", error);
-    return false;
-  }
+function openDetailsPage(listingId) {
+  window.location.href = `/profile/listing-details.html?id=${listingId}`;
 }
