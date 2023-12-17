@@ -50,7 +50,6 @@ function renderListings(listings, container) {
   for (let i = 0; i < listings.length; i++) {
     const listing = listings[i];
 
-    // Skip expired listings
     if (isListingExpired(listing)) {
       continue;
     }
@@ -74,11 +73,15 @@ function renderListings(listings, container) {
     }
   }
 }
+
+export { renderListings}
+
 function openDetailsPage(listingId) {
 
-    window.location.href = `./listing-details/index.html?id=${listingId}`;
+    window.location.href = `/listing-details/index.html?id=${listingId}`;
   }
-  
+export {openDetailsPage }
+
 function isListingExpired(listing) {
     const now = new Date().getTime();
     const deadline = new Date(listing.endsAt).getTime();
@@ -133,6 +136,8 @@ function createListingElement(listing) {
 
   return cardDiv;
 }
+
+export { createListingElement }
 function updateTimer(timerElement, deadline) {
     function update() {
       const now = new Date().getTime();
