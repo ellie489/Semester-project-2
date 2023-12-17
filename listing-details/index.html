@@ -19,68 +19,52 @@
     <script defer type="module" src="../src/modules/credits.mjs"></script>
     <script defer type="module" src="../src/views/listing-details.mjs"></script>
     <script defer type="module" src="../src/modules/bids.mjs"></script>
+    <script defer type="module" src="../src/modules/utils.mjs"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-primary d-flex">
       <div class="container-fluid">
-        <a class="navbar-brand" href="../index.html">
-          <img src="/icons/bidmate-icon.svg" alt="Bidmate icon" class="mx-2" />
-          Bidmate
-        </a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
-      </div>
-      <ul class="navbar-nav justify-content-center align-items-center">
-        <li class="nav-item dropdown px-3">
-          <a
-            class="nav-link dropdown-toggle text-black"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Categories
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Clothes</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Jewelry</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Art</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Shoes</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Watches</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Bikes</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Electronics</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Books</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Furniture</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Instruments</a></li>
-          </ul>
-        </li>
-        <li class="nav-item text-nowrap">
-          <a class="text-black" href="./new-listing.html">Add listing</a>
-        </li>
-        <li class="nav-item px-3">
-          <a
-            class="btn d-flex align-items-center text-black border-0"
-            href="/profile/"
-            >Profile
+        <a class="navbar-brand" href="/index.html"
+          ><img
+            src="/icons/bidmate-icon.svg"
+            alt="Bidmate icon"
+            class="mx-2"
+          />Bidmate</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav d-flex justify-content-center align-items-center">
+            
+            <li id="sign-in-nav-item" class="nav-item px-3">
+              <a
+                href="/profile/"
+                class="btn btn-secondary mx-3 px-4 fw-bold"
+                role="button"
+                >Profile</a
+              >            
             <img
               src="../icons/Profile Icon.svg"
               alt="profile icon"
               class="mx-2"
-            />
-          </a>
-        </li>
-      </ul>
-      <div id="banner" class="bg-dark text-white"></div>
+            /></li>
+          </ul>
+        </div>
+      </div><div id="banner" class= "bg-dark text-white"></div>
     </nav>
-
     <div class="profile-container">
       <main>
         <div id="listing-details-container" class="container rounded p-4">
@@ -99,7 +83,7 @@
                 </div>
               </div>
           
-              <div class="col-12 col-sm-12 col-xs-12 col-md-4 col-lg-4">
+              <div class="col-12 col-sm-12 col-xs-12 col-md-8 col-lg-6">
                 <h1 id="listingTitle"></h1>
                 <h2 class="fw-bold h3" id="current-bid"></h2>
                 <p id="listingDescription"></p>
@@ -118,113 +102,15 @@
                         
                       </div><button id="bid-button" class="btn btn-lg btn-secondary text-uppercase py-3 fw-bold">
                       Make a bid
+                    </button><p id="bid-status-message" class="mt-3"></p>
+                    <button id="view-bids-button" class="btn btn-dark text-uppercase py-2 mt-3 fw-bold">
+                      View bids
                     </button>
-                    
                   </div>
-              </div>
+              </div><div id="bids-list"><div id="no-bids-message"><p>There are currently no bids.</p></div></div>
+
             </div>
           </div>
-          
-        <!-- <div class="container">
-            <div class="card mb-3">
-                <div class="row g-0" id="listing-details-container">
-                    <div class="col-6">
-                        <button class="btn btn-light" id="prev-button">
-                            <i class="fa-solid fa-chevron-left" style="color: #e71626"></i>
-                          </button>
-                        <div id="media-gallery" class="img-fluid rounded"></div>
-                        <button class="btn btn-light" id="next-button">
-                            <i class="fa-solid fa-chevron-right" style="color: #e71626"></i>
-                          </button>
-                    </div>
-                    <div class="col-6">
-                        <div class="card-body">
-                            <h1 class="h3 card-title" id="listing-title"></h1>
-                            <p class="card-text" id="listing-description"></p>
-                            <p class="card-text" id="listing-deadline"></p>
-                            <button class="btn btn-lg btn-secondary">Make a bid</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- <div id="listing-details-container" class="container">
-            <div class="row align-items-center">
-        
-              <div class="col-1">
-                <button class="btn btn-light" id="prev-button">
-                  <i class="fa-solid fa-chevron-left" style="color: #e71626"></i>
-                </button>
-              </div>
-          
-         
-              <div class="col-md-6 d-flex">
-        
-                <div id="media-gallery" style="flex-grow: 1;">
-                  
-                  <img src="" alt="Listing Image" class="img-fluid rounded">
-                </div>
-          
-              
-                <div class="col-12">
-                  <div class="col-12">
-                    <h1 id="listing-title"></h1>
-                  </div>
-                  <div class="col-12">
-                    <p id="listing-description"></p>
-                  </div>
-                  <div class="col-12">
-                    <p id="listing-deadline"></p>
-                  </div>
-                  <div class="col-12">
-                    <p id="bid-count"></p>
-                  </div>
-                  <div class="col-12 mb-3">
-                    <a class="btn btn-lg btn-secondary" href="">Make a Bid</a>
-                  </div>
-                </div>
-              </div>
-          
-             
-              <div class="col-1">
-                <button class="btn btn-light" id="next-button">
-                  <i class="fa-solid fa-chevron-right" style="color: #e71626"></i>
-                </button>
-              </div>
-            </div>
-          </div> -->
-          
-        <!-- <div
-          id="listing-details-container"
-          class="container d-flex justify-content-center"
-        >
-          <div class="row">
-            <div class="gallery-container d-flex align-items-center">
-              <button class="btn btn-light" id="prev-button">
-                <i class="fa-solid fa-chevron-left" style="color: #e71626"></i>
-              </button>
-              <div
-                class="col-5 col-sm-10 col-xs-10 rounded"
-                id="media-gallery"
-              ></div>
-              <button class="btn btn-light" id="next-button">
-                <i class="fa-solid fa-chevron-right" style="color: #e71626"></i>
-              </button>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-6">
-              <h1 id="listing-title"></h1>
-
-              <p id="listing-description"></p>
-
-              <p id="listing-deadline"></p>
-
-              <p id="bid-count"></p>
-
-              <a class="btn btn-lg btn-secondary" href="">Make a Bid</a>
-            </div>
-          </div>
-        </div> -->
       </main>
       <footer class="mt-4 pt-4">
         <hr />
