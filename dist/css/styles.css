@@ -23804,7 +23804,7 @@ textarea.form-control-lg {
 .homepage {
   background-image: url(/images/Background\ 2.png);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 .login-container, .register-container, .profile-container, .details-container {
@@ -23868,18 +23868,18 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value for transparency */
-  z-index: 1000; /* Make sure it's above other content */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
 
 #banner {
   position: fixed;
-  top: 60px; /* Adjust the height of your navbar */
+  top: 60px;
   width: 100vw;
   height: 2.5rem;
   font-weight: bold;
   text-align: center;
-  z-index: 1000;
+  z-index: 999;
 }
 
 #banner p {
@@ -23899,6 +23899,10 @@ main {
   position: fixed;
   width: 100%;
   top: 0;
+  z-index: 1000;
+}
+
+nav * {
   z-index: 1000;
 }
 
@@ -23928,8 +23932,26 @@ main {
   overflow-wrap: break-word;
 }
 
-.card-body, .card-img {
+.card-body, .card-img, .card {
   cursor: pointer;
+}
+
+#bids-list {
+  display: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bid-entry {
+  margin-bottom: 10px;
+}
+
+.nav-item {
+  color: black;
 }
 
 @media (min-width: 1024px) {
@@ -23953,6 +23975,9 @@ main {
   }
   .login-form, .register-form {
     max-width: 400px;
+  }
+  .nav-sign-out {
+    display: none;
   }
 }
 @media (max-width: 1024px) {
@@ -23994,6 +24019,20 @@ main {
     top: auto;
     bottom: 0;
     z-index: 1000;
+  }
+  .nav-item {
+    margin: 1.5rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    background-color: #E71626;
+    border-radius: 1rem;
+  }
+  .profile-item {
+    display: none;
+  }
+  #sign-in-nav-item {
+    display: flex;
+    justify-content: center;
   }
   .login-form, .register-form {
     max-width: 90vw;
