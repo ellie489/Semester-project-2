@@ -20,60 +20,46 @@
   <body>
     <nav class="navbar navbar-expand-lg bg-primary d-flex">
       <div class="container-fluid">
-        <a class="navbar-brand" href="../index.html">
-          <img src="/icons/bidmate-icon.svg" alt="Bidmate icon" class="mx-2" />
-          Bidmate
-        </a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
-      </div>
-      <ul class="navbar-nav justify-content-center align-items-center">
-        <li class="nav-item dropdown px-3">
-          <a
-            class="nav-link dropdown-toggle text-black"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Categories
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Clothes</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Jewelry</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Art</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Shoes</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Watches</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Bikes</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Electronics</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Books</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Furniture</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Instruments</a></li>
-          </ul>
-        </li>
-        <li class="nav-item text-nowrap">
-          <a class="text-black" href="./new-listing.html"
-            >Add listing</a>
-        </li>
-        <li class="nav-item px-3">
-          <a class="btn d-flex align-items-center text-black" href="/profile/"
-            >Profile
+        <a class="navbar-brand" href="/index.html"
+          ><img
+            src="/icons/bidmate-icon.svg"
+            alt="Bidmate icon"
+            class="mx-2"
+          />Bidmate</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav d-flex justify-content-center align-items-center">
+            
+            <li id="sign-in-nav-item" class="nav-item px-3">
+              <a
+                href="/login/"
+                class="btn btn-secondary mx-3 px-4 fw-bold"
+                role="button"
+                >Sign In</a
+              >            
             <img
               src="../icons/Profile Icon.svg"
               alt="profile icon"
               class="mx-2"
-            />
-          </a>
-        </li>
-      </ul>
+            /></li>
+          </ul>
+        </div>
+      </div>
     </nav>
     <div class="profile-container d-flex flex-column align-items-center">
       <main>
@@ -125,12 +111,12 @@
                     <div class="input-group">
                       <input
                         type="url"
-                        class="form-control"
+                        class="form-control listing-image"
                         aria-label="listing image url"
                         aria-describedby="image"
                         id="listing-image"
                       />
-                      <button type="button" id="add-image" class="btn btn-primary">+</button>
+                      <button type="button" id="add-image" class="btn btn-primary image-input">+</button>
                     </div>
                   </div>
                   <div class="my-2 p-4 pb-0">
@@ -154,6 +140,8 @@
                       >Publish</button
                     >
                   </div>
+                  <div id="message-container"></div>
+                  <div class="d-grid gap-2 col-10 mx-auto mb-5"><button id="view-listing-button" class="btn btn-lg btn-dark">View Listing</button></div>
                 </form>
               </div>
             </div>
