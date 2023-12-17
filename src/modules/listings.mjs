@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       if (success) {
         const listings = data;
-        console.log(data)
 
         renderListings(listings, listingsContainer);
 
