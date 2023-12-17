@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta description="Bidmate auction homepage" />
+    <title>Bidmate | Your listing details</title>
+    <link rel="stylesheet" href="../dist/css/styles.css" />
+    <script
+      defer
+      src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    ></script>
+    <script
+      defer
+      src="https://kit.fontawesome.com/88b8d69470.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer type="module" src="../src/modules/auth.mjs"></script>
+    <script defer type="module" src="../src/modules/credits.mjs"></script>
+    <script
+      defer
+      type="module"
+      src="../src/views/profile-listing-details.mjs"
+    ></script>
+    <script defer type="module" src="../src/modules/bids.mjs"></script>
+    <script defer type="module" src="../src/modules/delete-listing.mjs"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md bg-primary d-flex">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html"
+          ><img
+            src="/icons/bidmate-icon.svg"
+            alt="Bidmate icon"
+            class="mx-2"
+          />Bidmate</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav d-flex justify-content-center align-items-center">
+            
+            <li id="sign-in-nav-item" class="nav-item px-3">
+              <a
+                href="/profile/"
+                class="btn btn-secondary mx-3 px-4 fw-bold"
+                role="button"
+                >Profile</a
+              >            
+            <img
+              src="../icons/Profile Icon.svg"
+              alt="profile icon"
+              class="mx-2"
+            /></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="profile-container">
+      <main><div id="banner" class="bg-dark text-white"></div>
+        <div id="listing-details-container" class="container rounded p-4">
+          <div class="row d-flex align-items-center">
+            <div class="col-12 col-md-6 col-lg-6">
+              <div id="carouselExampleIndicators" class="carousel slide">
+                <div id="carouselInner" class="carousel-inner rounded"></div>
+                <button
+                  id="prev-button"
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon bg-dark p-4"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  id="next-button"
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon bg-dark p-4"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-12 col-xs-12 col-md-4 col-lg-4">
+              <h1 id="listingTitle"></h1>
+              <h2 class="fw-bold h3" id="current-bid"></h2>
+              <p id="listingDescription"></p>
+              <p id="bid-count"></p>
+              <p id="listing-deadline"></p>
+              <div class="d-grid col-12 col-lg-9 mt-4">
+                <div class="mb-2 p-2"></div>
+                <button
+                  id="edit-button"
+                  class="btn btn-primary text-uppercase py-3 fw-bold mb-3"
+                >
+                  Edit
+                </button>
+                <button
+                  id="delete-button"
+                  class="btn btn-secondary text-uppercase py-3 fw-bold"
+                >
+                  Delete
+                </button>
+                              </div>
+            </div>                  <div id="message-container"></div><form id="edit-listing-form">
+                  <div class="my-2 p-4 pb-0">
+                    <h2 class="mb-4">Edit listing</h2><label for="title" class="mb-1 mx-1">Title</label>
+
+                    <input
+                      type="text"
+                      class="form-control"
+                      aria-label="Title"
+                      aria-describedby="title"
+                      id="edit-title"
+                      
+                    />
+                  </div>
+                
+                  <div id="image-container" class="mb-2 p-4 pb-0">
+                    <label for="listing-image" class="mb-1 mx-1"
+                      >image URL</label
+                    >
+
+                    <div class="input-group">
+                      <input
+                        type="url"
+                        class="form-control"
+                        aria-label="listing image url"
+                        aria-describedby="image"
+                        id="edit-listing-image"
+                        
+                      />
+                    </div>
+                  </div>
+                  <div class="my-2 p-4 pb-0">
+                    <label for="tags" class="mb-1 mx-1">Tags</label>
+
+                    <input
+                      type="text"
+                      class="form-control"
+                      aria-label="Tags"
+                      aria-describedby="tags"
+                      id="edit-tags"
+                    />
+                  </div>
+                  <div class="my-2 p-4 pb-2">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" id="edit-description"></textarea>
+                  </div>
+                  <div class="d-grid gap-2 col-10 mx-auto mb-5">
+                    <button type="submit" id="save-button"
+                      class="btn btn-secondary text-uppercase py-2"
+                      >Save</button
+                    >
+                  </div>
+
+                </form>
+          </div>
+        </div>
+      </main>
+      <footer class="mt-4 pt-4">
+        <hr />
+        <p class="d-flex justify-content-center">Bidmate 2023</p>
+      </footer>
+    </div>
+  </body>
+</html>
