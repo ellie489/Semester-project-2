@@ -11,6 +11,12 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
   if (loginResult.success) {
     window.location.href = '../profile/index.html';
   } else {
-    console.error('Login failed:', loginResult.error);
+    displayErrorMessage(loginResult.error);
   }
 });
+
+function displayErrorMessage(error) {
+  const errorElement = document.getElementById('login-error-message');
+  errorElement.textContent = error;
+  errorElement.classList.add("alert", "alert-danger");
+}

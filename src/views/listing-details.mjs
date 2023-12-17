@@ -1,34 +1,92 @@
 import { fetchData } from "../modules/api.mjs";
 import { API_URLS } from "../modules/constants.mjs";
 import { updateTimer } from "../modules/listings.mjs";
-import { placeBid } from "../modules/bids.mjs";
-document.addEventListener("DOMContentLoaded", async function () {
-  // Get the listing ID from URL parameters or other means
-  const listingId = getListingIdFromURL(); // Implement this function
 
-  // Fetch listing details
+document.addEventListener("DOMContentLoaded", async function () {
+  const bidButton = document.getElementById("bid-button");
+  const viewBidsButton = document.getElementById("view-bids-button");
+  const bidsListContainer = document.getElementById("bids-list");
+  const noBidsMessage = document.getElementById("no-bids-message");
+
+  if (!bidButton || !viewBidsButton || !bidsListContainer || !noBidsMessage) {
+    console.error("Required elements not found");
+    return;
+  }
+
+  const listingId = getListingIdFromURL();
   const { success, data } = await fetchListingDetails(listingId);
 
   if (success) {
-    // Display listing details
     displayListingDetails(data);
   } else {
     console.error("Failed to fetch listing details:", data.error);
+  }
+
+  const bidStatusMessage = document.getElementById("bid-status-message");
+
+  bidButton.addEventListener("click", async function () {
+    const bidAmountInput = document.getElementById("bid-amount");
+    const bidAmount = parseInt(bidAmountInput.value, 10);
+    const accessToken = localStorage.getItem("accessToken");
+
+    if (!accessToken) {
+
+      window.location.href = "/register/";
+      return;
+    }
+    if (!isNaN(bidAmount) && bidAmount > 0) {
+      try {
+        const bidResult = await placeBid(listingId, bidAmount);
+
+        if (bidResult.success) {
+          window.alert('Bid placed successfully! Click OK to refresh the page.');
+
+          window.location.reload();
+
+        } else {
+          console.error("Failed to place bid:", bidResult.data.error);
+          if (bidStatusMessage) {
+            bidStatusMessage.textContent = `Failed to place bid: ${bidResult.data.error}`;
+            bidStatusMessage.classList.add("alert", "alert-danger");
+          }
+        }
+      } catch (error) {
+        console.error("Error placing bid:", error);
+      }
+    } else {
+      bidStatusMessage.textContent = `Invalid bid amount. The bid must be a number.`;
+      bidStatusMessage.classList.add("alert", "alert-danger");
+    }
+  });
+  if (bidsListContainer) {
+    bidsListContainer.style.display = "none";
+  }
+
+  if (viewBidsButton && bidsListContainer) {
+    viewBidsButton.addEventListener("click", function () {
+      const bidHistoryVisible = bidsListContainer.style.display === "none";
+
+      viewBidsButton.textContent = bidHistoryVisible
+        ? "Hide Bids"
+        : "View Bids";
+      bidsListContainer.style.display = bidHistoryVisible ? "block" : "none";
+    });
   }
 });
 
 function getListingIdFromURL() {
   const urlParams = new URLSearchParams(window.location.search);
-  const listingId = urlParams.get("id");
-  return listingId;
+  return urlParams.get("id");
 }
 
 async function fetchListingDetails(listingId) {
   try {
     const queryParams = new URLSearchParams({ _bids: true });
-    const response = await fetch(`${API_URLS.LISTINGS}/${listingId}?${queryParams}`);
+    const response = await fetch(
+      `${API_URLS.LISTINGS}/${listingId}?${queryParams}`
+    );
     const data = await response.json();
-    console.log(data)
+    console.log(data);
     return {
       success: true,
       data: data,
@@ -40,8 +98,8 @@ async function fetchListingDetails(listingId) {
     };
   }
 }
-
 function displayListingDetails(listingDetails) {
+
   const carouselInner = document.getElementById("carouselInner");
   const listingTitle = document.getElementById("listingTitle");
   const listingDescription = document.getElementById("listingDescription");
@@ -49,24 +107,57 @@ function displayListingDetails(listingDetails) {
   const listingBidCount = document.getElementById("bid-count");
   const prevButton = document.getElementById("prev-button");
   const nextButton = document.getElementById("next-button");
+  const bidsListContainer = document.getElementById("bids-list");
+  const noBidsMessage = document.getElementById("no-bids-message");
+  const latestBidElement = document.getElementById("current-bid");
+
+
+  if (listingDetails.bids && listingDetails.bids.length > 0 && latestBidElement) {
+    const latestBidAmount = listingDetails.bids[0].amount;
+    latestBidElement.innerHTML = `<p>Current Bid: ${latestBidAmount} $</p>`;
+  }
+
+
+  if (bidsListContainer) {
+    bidsListContainer.innerHTML = "<h4>Bid History:</h4>";
+    bidsListContainer.classList.add("mt-3");
+    const bidsList = document.createElement("ul");
+    bidsList.classList.add("mt-3");
+
+    const sortedBids = listingDetails.bids.sort((a, b) => new Date(b.created) - new Date(a.created));
+
+    sortedBids.forEach((bid) => {
+      const createdDate = new Date(bid.created).toLocaleString();
+      const bidItem = document.createElement("li");
+      bidItem.classList.add("alert", "alert-primary");
+      bidItem.innerHTML = `<p>Amount: ${bid.amount} $</p><p>Bidder Name: ${bid.bidderName}</p><p>Date: ${createdDate}</p>`;
+      bidsList.appendChild(bidItem);
+    });
+
+    bidsListContainer.appendChild(bidsList);
+    if (noBidsMessage) {
+      noBidsMessage.style.display = sortedBids.length > 0 ? "none" : "block";
+    }
+  } else {
+    if (noBidsMessage) {
+      noBidsMessage.style.display = "block";
+    }
+  }
+
 
   if (listingDetails.media.length > 1) {
-    // Show carousel controls
-    prevButton.style.display = 'block';
-    nextButton.style.display = 'block';
+    prevButton.style.display = "block";
+    nextButton.style.display = "block";
   } else {
-    // Hide carousel controls
-    prevButton.style.display = 'none';
-    nextButton.style.display = 'none';
+    prevButton.style.display = "none";
+    nextButton.style.display = "none";
   }
-  // Update carousel items
+
+
   carouselInner.innerHTML = "";
   listingDetails.media.forEach((imageUrl, index) => {
     const item = document.createElement("div");
-    item.classList.add("carousel-item");
-    if (index === 0) {
-      item.classList.add("active");
-    }
+    item.classList.add("carousel-item", index === 0 ? "active" : "");
 
     const image = document.createElement("img");
     image.classList.add("d-block", "w-100");
@@ -76,50 +167,48 @@ function displayListingDetails(listingDetails) {
     carouselInner.appendChild(item);
   });
 
-  // Update text content
+
   listingTitle.textContent = listingDetails.title;
   listingDescription.textContent = listingDetails.description;
   const deadlineDate = new Date(listingDetails.endsAt).toLocaleString();
   deadlineElement.textContent = `Time left: ${deadlineDate}`;
   deadlineElement.classList.add("text-danger", "h6");
   updateTimer(deadlineElement, listingDetails.endsAt);
-  const bidCount = listingDetails._count.bids;
-  listingBidCount.textContent = `Current bids: ${bidCount}`;
-  if (listingDetails.bids && listingDetails.bids.length > 0) {
-    const latestBidIndex = listingDetails.bids.length - 1;
-    const latestBidAmount = listingDetails.bids[latestBidIndex].amount;
-    const latestBidElement = document.getElementById('current-bid');
-    if (latestBidElement) {
-      latestBidElement.textContent = `Current Bid: ${latestBidAmount} $`;
-    }
-  }
 }
 
-document.addEventListener("DOMContentLoaded", async function () {
 
-  const bidButton = document.getElementById("bid-button");
-  bidButton.addEventListener("click", async function () {
-    const bidAmountInput = document.getElementById("bid-amount");
-    const bidAmount = parseInt(bidAmountInput.value, 10);
+async function placeBid(listingId, bidAmount) {
+  try {
+    const accessToken = localStorage.getItem("accessToken");
+    const response = await fetch(`${API_URLS.LISTINGS}/${listingId}/bids`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+      body: JSON.stringify({ amount: bidAmount }),
+    });
 
-    // Get the listing ID
-    const listingId = getListingIdFromURL();
-
-    // Check if bid amount is valid
-    if (!isNaN(bidAmount) && bidAmount > 0) {
-      const bidResult = await placeBid(listingId, bidAmount);
-
-      if (bidResult.success) {
-        // Handle success, update UI, etc.
-      } else {
-        // Handle failure, show error message, etc.
-        console.error("Failed to place bid:", bidResult.data.error);
-      }
-    } else {
-      // Handle invalid bid amount, show error message, etc.
-      console.error("Invalid bid amount");
+    if (!response.ok) {
+      const responseData = await response.json();
+      console.error("Bid error:", responseData.errors[0]);
+      return {
+        success: false,
+        data: { error: responseData.errors[0].message },
+      };
     }
-  });
 
+    const data = await response.json();
 
-});
+    return {
+      success: true,
+      data,
+    };
+  } catch (error) {
+    console.error("Bid error:", error);
+    return {
+      success: false,
+      data: { error: "An error occurred during bid placement" },
+    };
+  }
+}
