@@ -20,6 +20,7 @@
     <script defer type="module" src="../src/views/profile.mjs"></script>
     <script defer type="module" src="../src/modules/logout.mjs"></script>
     <script defer type="module" src="../src/modules/credits.mjs"></script>
+    <script defer type="module" src="../src/modules/delete-listing.mjs"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-primary d-flex">
@@ -28,46 +29,12 @@
           <img src="/icons/bidmate-icon.svg" alt="Bidmate icon" class="mx-2" />
           Bidmate
         </a>
+        
         <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
       </div>
       <ul class="navbar-nav justify-content-center align-items-center">
-        <li class="nav-item dropdown px-3">
-          <a
-            class="nav-link dropdown-toggle text-black"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Categories
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Clothes</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Jewelry</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Art</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Shoes</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Watches</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Bikes</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Electronics</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Books</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Furniture</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Instruments</a></li>
-          </ul>
-        </li>
-        <li class="nav-item text-nowrap">
-          <a class="text-black" href="./new-listing.html"
-            >Add listing</a>
-        </li>
-        <li class="nav-item px-3">
+        
+        <li class="nav-item profile-item px-3">
           <a class="btn d-flex align-items-center text-black disabled border-0" href="/profile/"
             >Profile
             <img
@@ -77,6 +44,7 @@
             />
           </a>
         </li>
+        
       </ul><div id="banner" class= "bg-dark text-white"></div>
     </nav>
   
@@ -107,9 +75,6 @@
                 class="profile-avatar avatar-image rounded-circle img-fluid mx-4"
                 id="modal-avatar"
               />
-
-              <a href="../index.html" class="btn btn-secondary my-4">Delete</a>
-
               <form id="avatarForm">
                 <div class="my-2 pt-3">
                   <input
@@ -159,12 +124,13 @@
               <div
                 class="col-12 text-capitalize d-flex justify-content-center flex-column"
               >
-                <h2 class="h3">Your bids</h2>
-                <a
+                <h2 class="h3 m-auto my-3">Your bids</h2>
+                <div id="bids-container" class="col-8 m-auto" ></div>
+                <div class="m-auto"><a
                   href="../index.html"
-                  class="btn btn-lg btn-dark text-uppercase"
+                  class="btn btn-lg  btn-dark text-capitalize mb-4"
                   >Browse</a
-                >
+                ></div>
               </div>
             </div>
           </div>
@@ -177,7 +143,7 @@
                 <div id="listing-container" class="col-8 m-auto" ></div>
                 <div class="m-auto"><a
                   href="./new-listing.html"
-                  class="btn  btn-dark text-capitalize mb-4"
+                  class="btn btn-lg btn-dark text-capitalize mb-4"
                   >add listing</a
                 ></div>
               </div>
