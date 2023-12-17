@@ -18,6 +18,7 @@
     <script defer type="module" src="./src/modules/utils.mjs"></script>
     <script defer type="module" src="./src/modules/credits.mjs"></script>
     <script defer type="module" src="./src/modules/listings.mjs"></script>
+    <script defer type="module" src="./src/modules/searchform.mjs"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-primary d-flex">
@@ -45,51 +46,22 @@
           class="collapse navbar-collapse justify-content-end"
           id="navbarSupportedContent"
         >
-          <ul class="navbar-nav justify-content-center">
-            <li class="nav-item dropdown px-5">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Categories
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Clothes</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Jewelry</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Art</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Shoes</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Watches</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Bikes</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Electronics</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Books</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Furniture</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Instruments</a></li>
-              </ul>
-            </li>
+          <ul
+            class="navbar-nav d-flex justify-content-center align-items-center"
+          >
             <li id="sign-in-nav-item" class="nav-item px-3">
               <a
                 href="/login/"
-                class="btn btn-secondary mx-3 px-4"
+                class="btn btn-secondary mx-3 px-4 fw-bold"
                 role="button"
                 >Sign In</a
-              >            
-            <img
-              src="../icons/Profile Icon.svg"
-              alt="profile icon"
-              class="mx-2"
-            /></li>
+              >
+              <img
+                src="../icons/Profile Icon.svg"
+                alt="profile icon"
+                class="mx-2"
+              />
+            </li>
           </ul>
         </div>
       </div>
@@ -97,21 +69,26 @@
     <main class="homepage">
       <div id="banner" class="bg-dark text-white"></div>
       <div class="main container d-flex flex-column justify-content-center">
-        <div class="input-group search-form mb-4">
+        <!-- Add this HTML inside your <main> tag or wherever your search form is located -->
+        <div id="search-form" class="input-group search-form mb-4">
           <input
             type="search"
+            id="search-input"
             class="form-control"
             placeholder="Search for something"
             aria-label="Search for something"
             aria-describedby="search"
           />
-          <span
+         
+          <button
             class="input-group-text btn btn-secondary"
-            type="submit"
-            id="search"
-            >Search</span
+            type="button"
+            id="search-button"
           >
+            Search
+          </button>
         </div>
+
         <div class="container header pt-5">
           <div class="container">
             <div class="row">
@@ -124,22 +101,24 @@
                   <div class="col-12 d-flex justify-content-center">
                     <div class="col-5 col-md-6 col-lg-3 gavel"></div>
                     <div class="col-7 col-md-6 bidder-mobile"></div>
-                    <button
+                    <a
+                      href="/register/"
                       class="col-8 col-md-6 btn register-desktop btn-dark btn-lg shadow"
                     >
                       Sign up now
-                    </button>
+                    </a>
                   </div>
                 </div>
 
                 <div class="col-7 col-md-4 col-lg-3 bidder-desktop"></div>
                 <div class="col-1"></div>
                 <div class="col-12 m-auto">
-                  <button
+                  <a
+                    href="/register/"
                     class="col-12 col-md-6 btn register-mobile btn-dark btn-lg"
                   >
                     Sign up now
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -315,167 +294,6 @@
           <div class="row" id="listings-container"></div>
         </div>
       </div>
-      <!-- 
-      <div
-        class="container d-flex flex-column align-items-center justify-content-center"
-      >
-        <div class="row g-4">
-          <div class="col-6 col-lg-3">
-            <div class="card">
-              <img
-                src="/images/alan-scales-1_WMZARl81c-unsplash-min.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-              </div>
-            </div>
-            <p class="card-text">This item is for sale. 3m 44s left.</p>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="card">
-              <img
-                src="/images/alonso-talbert-s6DiDMLK0jk-unsplash-min.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="card">
-              <img
-                src="/images/amir-hanna-sweUF7FcyP4-unsplash-min.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="card">
-              <img
-                src="/images/benjamin-r-opJElA_rBNw-unsplash-min.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-lg-3">
-            <div class="card">
-              <img
-                src="/images/birmingham-museums-trust-NspHfyZnMBE-unsplash-min.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-6 col-lg-3">
-            <div class="card">
-              <img
-                src="/images/caio-coelho-QRN47la37gw-unsplash-min.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="card">
-              <img src="/images/shoes-1.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="card">
-              <img
-                src="/images/cornelia-ng-zZLhoEwGCeM-unsplash-min.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="card">
-              <img
-                src="/images/dillon-shook-mY3_bvR74fI-unsplash-min.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="card">
-              <img
-                src="/images/eberhard-grossgasteiger-8lDkmXnKo7s-unsplash-min.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div></div> -->
     </main>
   </body>
 </html>
