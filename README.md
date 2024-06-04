@@ -1,5 +1,5 @@
 # Bidmate - Semester Project 2
-![image](https://github.com/ellie489/Semester-project-2/blob/35a6a3c10153968b4ca35e044afd3b590f002040/images/Skjermbilde%202024-06-04%20kl.%2010.50.45.png)
+![image](https://github.com/ellie489/Semester-project-2/blob/main/images/Skjermbilde%202024-06-04%20kl.%2010.50.45.png)
 
 ## Description
 
