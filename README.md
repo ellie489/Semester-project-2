@@ -26,7 +26,7 @@ Key Features:
 1. Clone the repo:
 
 ```bash
-git clone https://github.com/ellie489/Semester-project-2.git
+git clone git@github.com:ellie489/Semester-project-2.git
 ```
 
 2. Install the dependencies:
