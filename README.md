@@ -1,36 +1,32 @@
-# Your project title
-
-![image](https://user-images.githubusercontent.com/52622303/164316813-4b12d99f-aeb7-4069-85cf-e72b3a50ac99.png)
-
-A simple overview of the use/purpose of the project.
+# Bidmate - Semester Project 2
+![image](https://github.com/ellie489/Semester-project-2/blob/35a6a3c10153968b4ca35e044afd3b590f002040/images/Skjermbilde%202024-06-04%20kl.%2010.50.45.png)
 
 ## Description
 
-Add a more detailed description of what your project entails and set out to do.
+This project is a front-end application for an auction website. Users can register, log in, create listings, bid on items and manage their profile. This project uses the Noroff API for all backend functionalities.
 
-You can add some bullet points if you'd like to:
-
-- List item 1
-- List item 2
-- List item 3
+Key Features:
+- User registration and authentication
+- Create and manage auction listings
+- Bid on items
+- View bid history on listings
+- Profile management including avatar update
+- Search through listings
 
 ## Built With
 
-You can list a the tech stack that you've used over here
-
-- [React.js](https://reactjs.org/)
-- [Bootstrap](https://getbootstrap.com)
+- [JavaScript](https://www.javascript.com/)
+- [Bootstrap](https://getbootstrap.com) with [Sass](https://sass-lang.com/)
+- [Netlify](https://www.netlify.com/) 
 
 ## Getting Started
 
 ### Installing
 
-This is where you list how to get the project started. It typically just includes telling a person to clone the repo and then to install the dependencies e.g.
-
 1. Clone the repo:
 
 ```bash
-git clone git@github.com:NoroffFEU/portfolio-1-example.git
+git clone https://github.com/ellie489/Semester-project-2.git
 ```
 
 2. Install the dependencies:
@@ -41,30 +37,56 @@ npm install
 
 ### Running
 
-Here is where you detail how to run the app. It typically involves the commands you'd need to run to start the project e.g.
-
-To run the app, run the following commands:
+To run the app locally, run the following command:
 
 ```bash
-npm run start
+npm run watch
 ```
 
 ## Contributing
 
-Here you can detail any information you want to provide regarding contributing to the project. For big projects you will usually have a separate `CONTRIBUTING.md` and link to it, but for smaller projects you can simply include instructions here. These instructions can simply detail the process you want a person to take, such as to make sure to open a pull request so code can be reviewed.
+If you have a suggestion to make this better, fork the repo and create a pull request.
+
+1. Fork the Project
+2. Create your Feature Branch (git checkout -b feature/CoolFeature)
+3. Commit your Changes (git commit -m 'Add some CoolFeature')
+4. Push to the Branch (git push origin feature/CoolFeature)
+5. Open a Pull Request
+
+Any contributions you make are greatly appreciated.
 
 ## Contact
 
-This is where you can leave your social links for people to contact you, such as a LinkedIn profile or Twitter link e.g.
+[My Instagram](https://www.instagram.com/elisabeth.h0pe/)
 
-[My Twitter page](www.twitter.com)
+[My LinkedIn page](https://www.linkedin.com/in/elisabeth-hope-7103a2199/)
 
-[My LinkedIn page](www.linkedin.com)
-
-## License
-
-You can link to your license file here if you're using one, or mention what license the codebase falls under. If you're unsure then you can simply delete this section.
 
 ## Acknowledgments
 
-This is where you can add any acknowledgements if you'd like, such as to people who have helped you or any code snippets you'd like to mention. You can delete this section if you don't have any acknowledgements to make.
+[Noroff Online School](https://www.noroff.no/)
+
+## Links to Project Resources
+- [Figma Mobile Prototype](https://www.figma.com/proto/R4ZEdHob0sxs1FOMSMU9mM/Semester-Project-2-CA?page-id=4%3A912&node-id=5-49&viewport=491%2C305%2C0.16&t=NfdZy4VW4PmuwodS-1&scaling=scale-down&starting-point-node-id=5%3A49)
+- [Figma Desktop Prototype](https://www.figma.com/proto/R4ZEdHob0sxs1FOMSMU9mM/Semester-Project-2-CA?page-id=92%3A2789&node-id=92-2798&viewport=581%2C519%2C0.09&t=9mIQXBobVK87neFh-1&scaling=min-zoom&starting-point-node-id=92%3A2798)
+- [Style Guide](https://www.figma.com/proto/R4ZEdHob0sxs1FOMSMU9mM/Semester-Project-2-CA?page-id=165%3A26&node-id=165-45&viewport=456%2C1215%2C0.1&t=Ldlv7VDxkL2M0f66-1&scaling=min-zoom)
+- [Trello Kanban Project Board](https://trello.com/b/qKo6Ebux)
+- [Hosted Application](https://exquisite-entremet-c7e38e.netlify.app/)
+
+## Requirements
+### User Stories
+- A user with a stud.noroff.no email may register
+- A registered user may login
+- A registered user may logout
+- A registered user may update their avatar
+- A registered user may view their total credit
+- A registered user may create a Listing with a title, deadline date, media gallery, and description
+- A registered user may add a Bid to another user’s Listing
+- A registered user may view Bids made on a Listing
+- An unregistered user may search through Listings
+
+### Technical Restrictions
+- Must use an approved CSS Framework (Bootstrap >5.0.1)
+- Must be hosted on an approved Static Host (Netlify)
+- Must use an approved Design Application (Figma)
+- Must use an approved Planning Application (Trello)
